@@ -48,7 +48,7 @@ brew install --cask alacritty
 mkdir -p ${HOME}/.config/alacritty
 ```
 ```bash
-ln -s $(pwd)/alacritty.yaml ${HOME}/.config/alacritty/alacritty.yaml
+ln -s $(pwd)/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
 ```
 
 # Neo Vim Setup
