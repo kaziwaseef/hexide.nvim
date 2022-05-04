@@ -53,6 +53,12 @@ ln -s $(pwd)/alacritty.yaml ${HOME}/.config/alacritty/alacritty.yaml
 
 # Neo Vim Setup
 
+## Install NeoVim
+
+```bash
+brew install neovim
+```
+
 ## Add nvim config
 
 ```bash
