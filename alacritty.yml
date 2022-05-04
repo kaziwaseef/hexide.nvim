@@ -50,3 +50,4 @@ key_bindings:
   - { key: T,              mods: Command,     chars: "\x14"       } # <Cmd-t> => <Ctrl-t>
   - { key: S,              mods: Command,     chars: "\x13"       } # <Cmd-s> => <Ctrl-s>
   - { key: C,              mods: Command,     chars: "\x19"       } # <Cmd-c> => <Ctrl-y>
+  - { key: Slash,          mods: Command,     chars: "\x05"       } # <Cmd-/> => <Ctrl-e> 
