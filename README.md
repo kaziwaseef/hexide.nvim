@@ -38,8 +38,9 @@ Install the custom Nerdfont from font directory in this repository
 
 ## Install Alacritty
 
-Go to: https://github.com/alacritty/alacritty/releases
-And download and install Alacritty
+```bash
+brew install --cask alacritty
+```
 
 ## Setup Alacritty
 
