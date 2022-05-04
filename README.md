@@ -46,6 +46,8 @@ brew install --cask alacritty
 
 ```bash
 mkdir -p ${HOME}/.config/alacritty
+```
+```bash
 ln -s $(pwd)/alacritty.yaml ${HOME}/.config/alacritty/alacritty.yaml
 ```
 
@@ -55,6 +57,8 @@ ln -s $(pwd)/alacritty.yaml ${HOME}/.config/alacritty/alacritty.yaml
 
 ```bash
 mkdir -p ${HOME}/.config/nvim
+```
+```bash
 ln -s $(pwd)/init.vim ${HOME}/.config/nvim/init.vim
 ```
 
