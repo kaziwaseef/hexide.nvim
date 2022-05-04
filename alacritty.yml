@@ -46,6 +46,6 @@ shell:
     - "tmux attach || tmux"
 
 key_bindings:
-  - { key: B,              mods: Command,     chars: "\x02"       }
-  - { key: T,              mods: Command,     chars: "\x14"       }
-
+  - { key: B,              mods: Command,     chars: "\x02"       } # <Cmd-b> => <Ctrl-b>
+  - { key: T,              mods: Command,     chars: "\x14"       } # <Cmd-t> => <Ctrl-t>
+  - { key: S,              mods: Command,     chars: "\x13"       } # <Cmd-s> => <Ctrl-s>
