@@ -21,7 +21,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ```bash
 ln -s $(pwd)/.tmux.conf ${HOME}/.tmux.conf
-tmux source ~/.tmux.conf
 ```
 
 ### Setup Plugins
