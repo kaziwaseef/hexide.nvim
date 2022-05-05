@@ -30,27 +30,6 @@ tmux
 <prefix>I
 ```
 
-# Alacritty Setup
-
-## Install Font
-
-Install the custom Nerdfont from font directory in this repository
-
-## Install Alacritty
-
-```bash
-brew install --cask alacritty
-```
-
-## Setup Alacritty
-
-```bash
-mkdir -p ${HOME}/.config/alacritty
-```
-```bash
-ln -s $(pwd)/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
-```
-
 # Neo Vim Setup
 
 ## Install NeoVim
@@ -83,3 +62,26 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 nvim
 :PlugInstall
 ```
+
+# Alacritty Setup
+
+## Install Font
+
+Install the custom Nerdfont from font directory in this repository
+
+## Install Alacritty
+
+```bash
+brew install --cask alacritty
+```
+
+## Setup Alacritty
+
+```bash
+mkdir -p ${HOME}/.config/alacritty
+```
+```bash
+ln -s $(pwd)/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
+```
+
+
