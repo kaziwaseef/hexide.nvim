@@ -46,8 +46,12 @@ shell:
     - "tmux attach || tmux"
 
 key_bindings:
-  - { key: B,              mods: Command,     chars: "\x02"       } # <Cmd-b> => <Ctrl-b>
-  - { key: T,              mods: Command,     chars: "\x14"       } # <Cmd-t> => <Ctrl-t>
-  - { key: S,              mods: Command,     chars: "\x13"       } # <Cmd-s> => <Ctrl-s>
-  - { key: C,              mods: Command,     chars: "\x19"       } # <Cmd-c> => <Ctrl-y>
-  - { key: Slash,          mods: Command,     chars: "\x05"       } # <Cmd-/> => <Ctrl-e> 
+  - { key: B,              mods: Command,       chars: "\x02"       } # <Cmd-b> => <Ctrl-b>
+  - { key: T,              mods: Command,       chars: "\x14"       } # <Cmd-t> => <Ctrl-t>
+  - { key: S,              mods: Command,       chars: "\x13"       } # <Cmd-s> => <Ctrl-s>
+  - { key: C,              mods: Command,       chars: "\x19"       } # <Cmd-c> => <Ctrl-y>
+  - { key: Slash,          mods: Command,       chars: "\x05"       } # <Cmd-/> => <Ctrl-e>
+  - { key: P,              mods: Command,       chars: "\x10"       } # <Cmd-p> => <Ctrl-p>
+  - { key: P,              mods: Command|Shift, chars: "++"         } # <Cmd-Shift-p> => ++
+  - { key: F,              mods: Command,       chars: "+-"         } # <Cmd-f> => +f
+  - { key: F,              mods: Command|Shift, chars: "+f"         } # <Cmd-Shift-f> => +-

@@ -77,13 +77,23 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
-### Install Plugins
+### Prerequisites
 
-Install Node, Yarn and Watchman. For Watchman,
+Install Node, Yarn.
+
+For Watchman,
 
 ```bash
 brew install watchman
 ```
+
+For ripgrep
+
+```bash
+brew install ripgrep
+```
+
+### Install Plugins
 
 ```
 nvim

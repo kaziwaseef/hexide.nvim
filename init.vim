@@ -1,15 +1,18 @@
-:set number
-:set relativenumber
-:set autoindent
-:set tabstop=4
-:set shiftwidth=4
-:set smarttab
-:set softtabstop=4
-:set mouse=a
+set number
+set relativenumber
+set autoindent
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set softtabstop=4
+set mouse=a
 
 let g:doom_one_terminal_colors = v:true
 
 set termguicolors
+
+" Dashboard
+let g:dashboard_default_executive='fzf'
 
 call plug#begin()
 
@@ -24,7 +27,10 @@ Plug 'mg979/vim-visual-multi' " Multi cursor for vim
 Plug 'kyazdani42/nvim-web-devicons' " Tab bar icons
 Plug 'romgrk/barbar.nvim' " Tab Plugin
 Plug 'romgrk/doom-one.vim' " Theme
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " The COC
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Find
+Plug 'junegunn/fzf.vim' " Fuzzy Find Vim
+Plug 'glepnir/dashboard-nvim' " Dashboard
 
 set encoding=UTF-8
 
@@ -42,15 +48,30 @@ vnoremap <C-s> <C-c>:w<cr>
 inoremap <C-s> <C-c>:w<cr>
 
 " Copy to OS clipboard
+" Cmd + c
 vnoremap <C-y> "*y
 
 " Comment
-nmap <C-e> gcc 
+" Cmd + /
+nmap <C-e> gcc
+" Cmd + /
 vmap <C-e> gcgv
+" Cmd + /
 imap <C-e> <C-c>gcc
 
 " Color scheme
 :colorscheme doom-one
+
+" FzF
+
+" Cmd + p
+nmap <C-p> :Files<cr>
+" Cmd + Shift + P
+nmap ++    :Buffers<cr>
+" Cmd + f 
+nmap +-    :BLines<cr>
+" Cmd + Shift + f
+nmap +f    :Rg<cr>
 
 " COC
 
@@ -59,7 +80,7 @@ set nobackup
 set nowritebackup
 
 " Give more space for displaying messages.
-set cmdheight=2
+set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -179,8 +200,8 @@ endif
 
 " Use CTRL-S for selections ranges.
 " Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
+" nmap <silent> <C-s> <Plug>(coc-range-select)
+" xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocActionAsync('format')
