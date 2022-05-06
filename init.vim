@@ -9,6 +9,7 @@ set expandtab
 set mouse=a
 set scrolloff=6
 set exrc
+set signcolumn=yes
 
 let g:doom_one_terminal_colors = v:true
 
@@ -26,7 +27,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin' " Git in nerdtree
 Plug 'ryanoasis/vim-devicons' " Icons
 Plug 'ap/vim-css-color' " Css color highlight
 Plug 'tpope/vim-surround' " Surround with quotes and stuff
-Plug 'mg979/vim-visual-multi' " Multi cursor for vim
 Plug 'kyazdani42/nvim-web-devicons' " Tab bar icons
 Plug 'romgrk/barbar.nvim' " Tab Plugin
 Plug 'romgrk/doom-one.vim' " Theme
@@ -34,17 +34,24 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " The COC
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Find
 Plug 'junegunn/fzf.vim' " Fuzzy Find Vim
 Plug 'glepnir/dashboard-nvim' " Dashboard
+Plug 'airblade/vim-gitgutter' " Git Sidebar
+Plug 'tpope/vim-fugitive' " Git Commands
+" Plug 'tpope/vim-rhubarb'
 
 set encoding=UTF-8
 
 call plug#end()
 
+let g:python3_host_prog='/opt/homebrew/bin/python3'
+
 set hidden
 
 " NERDtree
-noremap <C-t> :NERDTreeToggle<cr>
-noremap † :NERDTreeFind<cr>
+noremap † :NERDTreeToggle<cr>
+noremap <C-t> :NERDTreeFind<cr>
 let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
+let g:NERDTreeWinPos='right'
 
 " Check if NERDTree is open or active
 function! IsNERDTreeOpen()        
@@ -151,14 +158,7 @@ set updatetime=300
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
+
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by

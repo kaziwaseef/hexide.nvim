@@ -47,6 +47,8 @@ shell:
 
 key_bindings:
   - { key: B,              mods: Command,       chars: "\x02"       } # <Cmd-b> => <Ctrl-b>
+  - { key: I,              mods: Command,       chars: "\x09"       } # <Cmd-i> => <Ctrl-i>
+  - { key: O,              mods: Command,       chars: "\x0F"       } # <Cmd-o> => <Ctrl-o>
   - { key: T,              mods: Command,       chars: "\x14"       } # <Cmd-t> => <Ctrl-t>
   - { key: T,              mods: Command|Shift, chars: "†"          } # <Cmd-Shift-t> => <Opt-t>
   - { key: S,              mods: Command,       chars: "\x13"       } # <Cmd-s> => <Ctrl-s>
