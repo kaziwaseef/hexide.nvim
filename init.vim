@@ -6,6 +6,7 @@ set shiftwidth=4
 set smarttab
 set softtabstop=4
 set mouse=a
+set scrolloff=6
 
 let g:doom_one_terminal_colors = v:true
 
@@ -73,6 +74,43 @@ nmap +-    :BLines<cr>
 " Cmd + Shift + f
 nmap +f    :Rg<cr>
 
+" Barbar
+
+" Move to previous/next
+" Opt + ,
+nnoremap <silent>    ≤ :BufferPrevious<CR>
+" Opt + .
+nnoremap <silent>    ≥ :BufferNext<CR>
+" Re-order to previous/next
+" Opt + <
+nnoremap <silent>    ¯ :BufferMovePrevious<CR>
+" Opt + <
+nnoremap <silent>    ˘ :BufferMoveNext<CR>
+
+" Goto buffer in position...
+" <A-1> 
+nnoremap <silent>   ¡ :BufferGoto 1<CR>
+" <A-2> 
+nnoremap <silent>   ™ :BufferGoto 2<CR>
+" <A-3> 
+nnoremap <silent>   £ :BufferGoto 3<CR>
+" <A-4> 
+nnoremap <silent>   ¢ :BufferGoto 4<CR>
+" <A-5> 
+nnoremap <silent>   ∞ :BufferGoto 5<CR>
+" <A-6> 
+nnoremap <silent>   § :BufferGoto 6<CR>
+" <A-7> 
+nnoremap <silent>   ¶ :BufferGoto 7<CR>
+" <A-8> 
+nnoremap <silent>   • :BufferGoto 8<CR>
+" <A-9> 
+nnoremap <silent>   ª :BufferLast<CR>
+" <A-p> 
+nnoremap <silent>   π :BufferPin<CR>
+" <A-w> 
+nnoremap <silent>   ∑ :BufferClose<CR>
+
 " COC
 
 " Some servers have issues with backup files, see #649.
@@ -113,11 +151,7 @@ function! s:check_back_space() abort
 endfunction
 
 " Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
@@ -234,3 +268,5 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+hi! CocErrorSign guifg=#d1666a

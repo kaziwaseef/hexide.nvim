@@ -55,3 +55,4 @@ key_bindings:
   - { key: P,              mods: Command|Shift, chars: "++"         } # <Cmd-Shift-p> => ++
   - { key: F,              mods: Command,       chars: "+-"         } # <Cmd-f> => +f
   - { key: F,              mods: Command|Shift, chars: "+f"         } # <Cmd-Shift-f> => +-
+  - { key: Space,          mods: Control,       chars: "\x00"       } # Passthrough <Ctrl-Space>

@@ -100,4 +100,9 @@ nvim
 :PlugInstall
 ```
 
+## Setup CoC
 
+Open nvim and run:
+```
+:CocInstall coc-json coc-tsserver
+```
