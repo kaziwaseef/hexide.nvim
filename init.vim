@@ -5,8 +5,10 @@ set tabstop=4
 set shiftwidth=4
 set smarttab
 set softtabstop=4
+set expandtab
 set mouse=a
 set scrolloff=6
+set exrc
 
 let g:doom_one_terminal_colors = v:true
 
@@ -41,7 +43,25 @@ set hidden
 
 " NERDtree
 noremap <C-t> :NERDTreeToggle<cr>
+noremap † :NERDTreeFind<cr>
 let NERDTreeShowHidden=1
+
+" Check if NERDTree is open or active
+function! IsNERDTreeOpen()        
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function! SyncTree()
+  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+" Highlight currently open buffer in NERDTree
+autocmd BufRead * call SyncTree()
 
 " Saving
 nnoremap <C-s> <C-c>:w<cr>
@@ -59,6 +79,10 @@ nmap <C-e> gcc
 vmap <C-e> gcgv
 " Cmd + /
 imap <C-e> <C-c>gcc
+
+" Moving Lines
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
 " Color scheme
 :colorscheme doom-one
@@ -151,7 +175,7 @@ function! s:check_back_space() abort
 endfunction
 
 " Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+imap <expr>  coc#refresh()
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
