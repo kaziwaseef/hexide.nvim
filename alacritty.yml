@@ -59,3 +59,15 @@ key_bindings:
   - { key: F,              mods: Command,       chars: "+-"         } # <Cmd-f> => +f
   - { key: F,              mods: Command|Shift, chars: "+f"         } # <Cmd-Shift-f> => +-
   - { key: I,              mods: Command,       chars: ""         } # <Cmd-i> => <Ctrl--> 
+  - { key: Key1,           mods: Command,       chars: "¡"          } # <Cmd-1> => <Opt-1> 
+  - { key: Key2,           mods: Command,       chars: "™"          } # <Cmd-2> => <Opt-2> 
+  - { key: Key3,           mods: Command,       chars: "£"          } # <Cmd-3> => <Opt-3> 
+  - { key: Key4,           mods: Command,       chars: "¢"          } # <Cmd-4> => <Opt-4> 
+  - { key: Key5,           mods: Command,       chars: "∞"          } # <Cmd-5> => <Opt-5> 
+  - { key: Key6,           mods: Command,       chars: "§"          } # <Cmd-6> => <Opt-6> 
+  - { key: Key7,           mods: Command,       chars: "¶"          } # <Cmd-7> => <Opt-7> 
+  - { key: Key8,           mods: Command,       chars: "•"          } # <Cmd-8> => <Opt-8> 
+  - { key: Key9,           mods: Command,       chars: "ª"          } # <Cmd-9> => <Opt-9> 
+  - { key: Period,         mods: Command,       chars: "≥"          } # <Cmd-,> => <Opt->> 
+  - { key: Comma,          mods: Command,       chars: "≤"          } # <Cmd-.> => <Opt-<> 
+
