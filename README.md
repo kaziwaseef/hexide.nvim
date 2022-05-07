@@ -102,7 +102,19 @@ nvim
 
 ## Setup CoC
 
+Settings config
+```bash
+ln -s $(pwd)/coc-settings.json ${HOME}/.config/nvim/coc-settings.json
+```
+
 Open nvim and run:
 ```
-:CocInstall coc-json coc-tsserver
+:CocInstall coc-json coc-tsserver coc-eslint
+```
+
+### Graphql
+
+Install cli
+```bash
+npm i -g graphql-language-service-cli
 ```
