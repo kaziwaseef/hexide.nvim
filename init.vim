@@ -36,6 +36,7 @@ Plug 'junegunn/fzf.vim' " Fuzzy Find Vim
 Plug 'glepnir/dashboard-nvim' " Dashboard
 Plug 'airblade/vim-gitgutter' " Git Sidebar
 Plug 'tpope/vim-fugitive' " Git Commands
+Plug 'jparise/vim-graphql' " Graphql Syntax Highlight and stuff
 
 set encoding=UTF-8
 
@@ -291,3 +292,6 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 hi! CocErrorSign guifg=#d1666a
+
+" let g:node_client_debug = 1
+" let g:coc_node_args = ['--nolazy', '--inspect=6045']
