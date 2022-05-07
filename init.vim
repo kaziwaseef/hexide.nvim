@@ -36,7 +36,6 @@ Plug 'junegunn/fzf.vim' " Fuzzy Find Vim
 Plug 'glepnir/dashboard-nvim' " Dashboard
 Plug 'airblade/vim-gitgutter' " Git Sidebar
 Plug 'tpope/vim-fugitive' " Git Commands
-" Plug 'tpope/vim-rhubarb'
 
 set encoding=UTF-8
 
@@ -109,38 +108,38 @@ nmap +f    :Rg<cr>
 
 " Move to previous/next
 " Opt + ,
-nnoremap <silent>    ≤ :BufferPrevious<CR>
+nnoremap ≤ :BufferPrevious<CR>
 " Opt + .
-nnoremap <silent>    ≥ :BufferNext<CR>
+nnoremap ≥ :BufferNext<CR>
 " Re-order to previous/next
 " Opt + <
-nnoremap <silent>    ¯ :BufferMovePrevious<CR>
+nnoremap ¯ :BufferMovePrevious<CR>
 " Opt + <
-nnoremap <silent>    ˘ :BufferMoveNext<CR>
+nnoremap ˘ :BufferMoveNext<CR>
 
 " Goto buffer in position...
 " <A-1> 
-nnoremap <silent>   ¡ :BufferGoto 1<CR>
+nnoremap ¡ :BufferGoto 1<CR>
 " <A-2> 
-nnoremap <silent>   ™ :BufferGoto 2<CR>
+nnoremap ™ :BufferGoto 2<CR>
 " <A-3> 
-nnoremap <silent>   £ :BufferGoto 3<CR>
+nnoremap £ :BufferGoto 3<CR>
 " <A-4> 
-nnoremap <silent>   ¢ :BufferGoto 4<CR>
+nnoremap ¢ :BufferGoto 4<CR>
 " <A-5> 
-nnoremap <silent>   ∞ :BufferGoto 5<CR>
+nnoremap ∞ :BufferGoto 5<CR>
 " <A-6> 
-nnoremap <silent>   § :BufferGoto 6<CR>
+nnoremap § :BufferGoto 6<CR>
 " <A-7> 
-nnoremap <silent>   ¶ :BufferGoto 7<CR>
+nnoremap ¶ :BufferGoto 7<CR>
 " <A-8> 
-nnoremap <silent>   • :BufferGoto 8<CR>
+nnoremap • :BufferGoto 8<CR>
 " <A-9> 
-nnoremap <silent>   ª :BufferLast<CR>
+nnoremap ª :BufferLast<CR>
 " <A-p> 
-nnoremap <silent>   π :BufferPin<CR>
+nnoremap π :BufferPin<CR>
 " <A-w> 
-nnoremap <silent>   ∑ :BufferClose<CR>
+nnoremap ∑ :BufferClose<CR>
 
 " COC
 
