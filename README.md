@@ -96,6 +96,12 @@ For ripgrep
 brew install ripgrep
 ```
 
+For Typos:
+
+```bash
+cargo install typos-cli
+```
+
 ### Install Plugins
 
 ```
@@ -114,7 +120,7 @@ ln -s $(pwd)/coc-settings.json ${HOME}/.config/nvim/coc-settings.json
 Open nvim and run:
 
 ```
-:CocInstall coc-json coc-tsserver coc-eslint coc-css coc-pairs
+:CocInstall coc-json coc-tsserver coc-eslint coc-css coc-pairs coc-typos
 ```
 
 ### Graphql
