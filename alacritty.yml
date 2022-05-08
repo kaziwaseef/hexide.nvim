@@ -70,4 +70,10 @@ key_bindings:
   - { key: Key9,           mods: Command,       chars: "ª"          } # <Cmd-9> => <Opt-9> 
   - { key: Period,         mods: Command,       chars: "≥"          } # <Cmd-,> => <Opt->> 
   - { key: Comma,          mods: Command,       chars: "≤"          } # <Cmd-.> => <Opt-<> 
+  - { key: J,              mods: Command,       chars: "\x0A"       } # <Cmd-J> => <Ctrl-J> 
+  - { key: K,              mods: Command,       chars: "\x0B"       } # <Cmd-K> => <Ctrl-K> 
+  - { key: L,              mods: Command,       chars: "\x0C"       } # <Cmd-L> => <Ctrl-L> 
+  - { key: H,              mods: Command,       chars: "\x08"       } # <Cmd-H> => <Ctrl-H> 
+  - { key: V,              mods: Command|Shift, chars: "√"          } # <Cmd-V> => <Opt-V> 
+  - { key: S,              mods: Command|Shift, chars: "ß"          } # <Cmd-S> => <Opt-S>
 

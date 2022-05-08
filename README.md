@@ -1,4 +1,5 @@
 # config-files
+
 Config files for my environment
 
 # Tmux Setup
@@ -47,6 +48,7 @@ brew install --cask alacritty
 ```bash
 mkdir -p ${HOME}/.config/alacritty
 ```
+
 ```bash
 ln -s $(pwd)/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
 ```
@@ -64,6 +66,7 @@ brew install neovim
 ```bash
 mkdir -p ${HOME}/.config/nvim
 ```
+
 ```bash
 ln -s $(pwd)/init.vim ${HOME}/.config/nvim/init.vim
 ```
@@ -103,18 +106,21 @@ nvim
 ## Setup CoC
 
 Settings config
+
 ```bash
 ln -s $(pwd)/coc-settings.json ${HOME}/.config/nvim/coc-settings.json
 ```
 
 Open nvim and run:
+
 ```
-:CocInstall coc-json coc-tsserver coc-eslint
+:CocInstall coc-json coc-tsserver coc-eslint coc-css coc-pairs
 ```
 
 ### Graphql
 
 Install cli
+
 ```bash
 npm i -g graphql-language-service-cli
 ```

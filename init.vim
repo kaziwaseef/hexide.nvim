@@ -15,11 +15,13 @@ let g:doom_one_terminal_colors = v:true
 
 set termguicolors
 
+let mapleader = " "
+
 " Dashboard
 let g:dashboard_default_executive='fzf'
 
 call plug#begin()
-
+" testArich
 Plug 'vim-airline/vim-airline' " Status bar
 Plug 'preservim/nerdtree' " NerdTree Left Sidebar
 Plug 'tpope/vim-commentary' " Comments
@@ -37,6 +39,7 @@ Plug 'glepnir/dashboard-nvim' " Dashboard
 Plug 'airblade/vim-gitgutter' " Git Sidebar
 Plug 'tpope/vim-fugitive' " Git Commands
 Plug 'jparise/vim-graphql' " Graphql Syntax Highlight and stuff
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' } " Prettier
 
 set encoding=UTF-8
 
@@ -45,6 +48,26 @@ call plug#end()
 let g:python3_host_prog='/opt/homebrew/bin/python3'
 
 set hidden
+
+" Splits
+
+" Movement
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
+" Make split
+nnoremap √ <C-w><C-v>
+nnoremap ß <C-w><C-s>
+
+" Prettier
+let g:prettier#quickfix_enabled = 0
+
+let g:prettier#autoformat = 0
+autocmd BufWritePre,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md PrettierAsync
+
+" Coc Pair
+autocmd FileType markdown let b:coc_pairs_disabled = ['`']
 
 " NERDtree
 noremap † :NERDTreeToggle<cr>
@@ -294,4 +317,4 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 hi! CocErrorSign guifg=#d1666a
 
 " let g:node_client_debug = 1
-" let g:coc_node_args = ['--nolazy', '--inspect=6045']
+" let g:coc_node_args = ['--olazy', '--inspect=6045']
