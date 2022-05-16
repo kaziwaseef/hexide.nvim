@@ -47,7 +47,8 @@ Plug 'airblade/vim-gitgutter' " Git Sidebar
 Plug 'tpope/vim-fugitive' " Git Commands
 Plug 'jparise/vim-graphql' " GraphQl Syntax Highlight and stuff
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' } " Prettier
-Plug 'kamykn/spelunker.vim'
+Plug 'kamykn/spelunker.vim' " Spell Check
+Plug 'junegunn/rainbow_parentheses.vim' " Bracket Highlight
 
 set encoding=UTF-8
 
@@ -71,7 +72,7 @@ nnoremap ß <C-w><C-s>
 let g:prettier#quickfix_enabled = 0
 
 let g:prettier#autoformat = 0
-autocmd BufWritePre,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md PrettierAsync
 
 " Coc Pair
 autocmd FileType markdown let b:coc_pairs_disabled = ['`']
@@ -187,6 +188,17 @@ set updatetime=300
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
