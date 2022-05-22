@@ -49,6 +49,8 @@ Plug 'jparise/vim-graphql' " GraphQl Syntax Highlight and stuff
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' } " Prettier
 Plug 'kamykn/spelunker.vim' " Spell Check
 Plug 'junegunn/rainbow_parentheses.vim' " Bracket Highlight
+Plug 'vim-scripts/ReplaceWithRegister' " Press gr to replace to _ register
+Plug 'machakann/vim-highlightedyank' " Shows the yanked area for a small delay
 
 set encoding=UTF-8
 
@@ -65,7 +67,9 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 " Make split
+" cmd + shift + v
 nnoremap √ <C-w><C-v>
+" cmd + shift + s
 nnoremap ß <C-w><C-s>
 
 " Prettier

@@ -8,7 +8,7 @@ font:
   bold:
     family: Hurmit Nerd Font Mono
     style: bold
-  size: 14.5
+  size: 14
 
 colors:
   primary:
