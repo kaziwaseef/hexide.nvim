@@ -120,7 +120,7 @@ ln -s $(pwd)/coc-settings.json ${HOME}/.config/nvim/coc-settings.json
 Open nvim and run:
 
 ```
-:CocInstall coc-json coc-tsserver coc-eslint coc-css coc-pairs coc-typos
+:CocInstall coc-json coc-tsserver coc-eslint coc-css
 ```
 
 ### Graphql
