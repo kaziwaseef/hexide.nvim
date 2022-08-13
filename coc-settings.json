@@ -5,5 +5,7 @@
             "args": ["server", "-m", "stream"],
             "filetypes": ["typescript", "typescriptreact", "graphql"]
         }
-    }
+    },
+    "javascript.suggest.autoImports": true,
+    "typescript.suggest.autoImports": true
 }

@@ -42,7 +42,6 @@ Plug 'romgrk/doom-one.vim' " Theme
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " The COC
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Find
 Plug 'junegunn/fzf.vim' " Fuzzy Find Vim
-Plug 'glepnir/dashboard-nvim' " Dashboard
 Plug 'airblade/vim-gitgutter' " Git Sidebar
 Plug 'tpope/vim-fugitive' " Git Commands
 Plug 'jparise/vim-graphql' " GraphQl Syntax Highlight and stuff
@@ -51,6 +50,7 @@ Plug 'kamykn/spelunker.vim' " Spell Check
 Plug 'junegunn/rainbow_parentheses.vim' " Bracket Highlight
 Plug 'vim-scripts/ReplaceWithRegister' " Press gr to replace to _ register
 Plug 'machakann/vim-highlightedyank' " Shows the yanked area for a small delay
+Plug 'wellle/context.vim' " context scroll
 
 set encoding=UTF-8
 
@@ -208,23 +208,22 @@ endfunction
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+    \ coc#pum#visible() ? coc#pum#next(1):
+    \ <SID>check_back_space() ? "\<Tab>" :
+    \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion.
 imap <expr>  coc#refresh()
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <C-x><C-z> coc#pum#visible() ? coc#pum#stop() : "\<C-x>\<C-z>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
