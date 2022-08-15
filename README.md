@@ -68,7 +68,13 @@ mkdir -p ${HOME}/.config/nvim
 ```
 
 ```bash
-ln -s $(pwd)/init.vim ${HOME}/.config/nvim/init.vim
+ln -s $(pwd)/init.lua ${HOME}/.config/nvim/init.lua
+```
+
+
+```bash
+ln -s $(pwd)/lua/ ${HOME}/.config/nvim/
+ln -s $(pwd)/plugin/ ${HOME}/.config/nvim/
 ```
 
 ## Install Plugins

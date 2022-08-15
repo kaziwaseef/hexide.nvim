@@ -1,0 +1,6 @@
+require "rawnvim.option"
+require "rawnvim.keymap"
+require "rawnvim.plugin"
+require "rawnvim.colorscheme"
+require "rawnvim.completion"
+require "rawnvim.lsp"
