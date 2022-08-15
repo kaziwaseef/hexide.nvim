@@ -44,22 +44,75 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
-  use "lunarvim/darkplus.nvim" -- Color Scheme
 
+  -- Color Schemes
+  use {
+    'joshdick/onedark.vim',
+  }
+  use 'itchyny/lightline.vim'
+  use 'kyazdani42/nvim-web-devicons'
+  use {
+    'romgrk/barbar.nvim',
+  }
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
 
   -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  use {
+    "L3MON4D3/LuaSnip", --snippet engine
+    "rafamadriz/friendly-snippets", -- a bunch of snippets to use
+  }
+  -- Telescope
+  use "nvim-telescope/telescope.nvim"
+
+  -- File Tree
+  use 'kyazdani42/nvim-tree.lua'
+
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use "p00f/nvim-ts-rainbow"
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server nvim-lsp-installer
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
+
+  -- Git
+  use {
+    'lewis6991/gitsigns.nvim',
+  }
+  
+  -- Comment
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+
+  use {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    config = function ()
+      require'nvim-treesitter.configs'.setup {
+        context_commentstring = {
+          enable = true
+        }
+      }
+    end
+  }
+
+  use 'machakann/vim-highlightedyank'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

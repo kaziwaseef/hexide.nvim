@@ -56,8 +56,8 @@ key_bindings:
   - { key: Slash,          mods: Command,       chars: "\x05"       } # <Cmd-/> => <Ctrl-e>
   - { key: P,              mods: Command,       chars: "\x10"       } # <Cmd-p> => <Ctrl-p>
   - { key: P,              mods: Command|Shift, chars: "++"         } # <Cmd-Shift-p> => ++
-  - { key: F,              mods: Command,       chars: "+-"         } # <Cmd-f> => +f
-  - { key: F,              mods: Command|Shift, chars: "+f"         } # <Cmd-Shift-f> => +-
+  - { key: F,              mods: Command,       chars: "+-"         } # <Cmd-f> => +-
+  - { key: F,              mods: Command|Shift, chars: "+f"         } # <Cmd-Shift-f> => +f
   - { key: I,              mods: Command,       chars: ""         } # <Cmd-i> => <Ctrl--> 
   - { key: Key1,           mods: Command,       chars: "¡"          } # <Cmd-1> => <Opt-1> 
   - { key: Key2,           mods: Command,       chars: "™"          } # <Cmd-2> => <Opt-2> 
