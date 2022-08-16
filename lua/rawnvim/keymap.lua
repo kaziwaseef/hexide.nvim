@@ -1,7 +1,5 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -14,10 +12,10 @@ vim.g.maplocalleader = " "
 local map = {
   CMD_c = "<C-y>",
   CMD_s = "<C-s>",
-  CMD_SHIFT_J = "<C-j>",
-  CMD_SHIFT_K = "<C-k>",
-  CMD_SHIFT_L = "<C-l>",
-  CMD_SHIFT_H = "<C-h>",
+  CMD_j = "<C-j>",
+  CMD_k = "<C-k>",
+  CMD_l = "<C-l>",
+  CMD_h = "<C-h>",
   CMD_SHIFT_V = '√',
   CMD_SHIFT_S = 'ß',
 }
@@ -36,10 +34,10 @@ keymap("v", 'K', ":m '<-2<CR>gv=gv", opts)
 
 -- Splits
 -- Movement
-keymap("n", map.CMD_SHIFT_J, "<C-w><C-j>", opts)
-keymap("n", map.CMD_SHIFT_K, "<C-w><C-k>", opts)
-keymap("n", map.CMD_SHIFT_L, "<C-w><C-l>", opts)
-keymap("n", map.CMD_SHIFT_H, "<C-w><C-h>", opts)
+keymap("n", map.CMD_j, "<C-w><C-j>", opts)
+keymap("n", map.CMD_k, "<C-w><C-k>", opts)
+keymap("n", map.CMD_l, "<C-w><C-l>", opts)
+keymap("n", map.CMD_h, "<C-w><C-h>", opts)
 -- Make split
 keymap("n", map.CMD_SHIFT_V, "<C-w><C-v>", opts)
 keymap("n", map.CMD_SHIFT_S, "<C-w><C-s>", opts)

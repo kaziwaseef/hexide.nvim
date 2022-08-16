@@ -65,74 +65,26 @@ brew install neovim
 
 ```bash
 mkdir -p ${HOME}/.config/nvim
-```
-
-```bash
 ln -s $(pwd)/init.lua ${HOME}/.config/nvim/init.lua
-```
-
-
-```bash
 ln -s $(pwd)/lua/ ${HOME}/.config/nvim/
 ln -s $(pwd)/plugin/ ${HOME}/.config/nvim/
 ```
 
 ## Install Plugins
 
-### Add Vim Plug
-
-```bash
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+Goto the plugin.lua file and save it to auto install all plugins
+```
+```
+Use :Mason to install prettierd
 ```
 
 ### Prerequisites
 
-Install Node, Yarn.
-
-For Watchman,
-
-```bash
-brew install watchman
-```
+Install Node, ripgrep
 
 For ripgrep
 
 ```bash
 brew install ripgrep
-```
-
-For Typos:
-
-```bash
-cargo install typos-cli
-```
-
-### Install Plugins
-
-```
-nvim
-:PlugInstall
-```
-
-## Setup CoC
-
-Settings config
-
-```bash
-ln -s $(pwd)/coc-settings.json ${HOME}/.config/nvim/coc-settings.json
-```
-
-Open nvim and run:
-
-```
-:CocInstall coc-json coc-tsserver coc-eslint coc-css
-```
-
-### Graphql
-
-Install cli
-
-```bash
-npm i -g graphql-language-service-cli
 ```

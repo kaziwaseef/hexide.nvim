@@ -16,7 +16,6 @@ local servers = {
     "graphql", -- Graphql
     "gopls", -- Go
     "html", -- HTML | Setup Completion
-    -- "quick_lint_js", -- Javascript Bug Finder
     "rust_analyzer", -- Rust
     "tailwindcss", -- Tailwind Css Library
     "terraformls", -- Terraform (Public API)
