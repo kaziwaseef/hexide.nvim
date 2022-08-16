@@ -54,7 +54,6 @@ return packer.startup(function(use)
     use {
         'itchyny/lightline.vim',
         'kyazdani42/nvim-web-devicons',
-        'niklaas/lightline-gitdiff',
     }
     use {
         'romgrk/barbar.nvim',

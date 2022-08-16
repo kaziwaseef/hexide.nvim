@@ -4,13 +4,10 @@ vim.cmd [[
     \ 'colorscheme': 'wombat',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'gitdiff' ] ]
+    \             [ 'gitbranch' ] ]
     \ },
     \ 'component_function': {
     \   'gitbranch': 'FugitiveHead'
-    \ },
-    \ 'component_expand': {
-    \   'gitdiff': 'lightline#gitdiff#get',
     \ },
     \ }
 ]]

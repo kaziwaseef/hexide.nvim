@@ -41,3 +41,12 @@ keymap("n", map.CMD_h, "<C-w><C-h>", opts)
 -- Make split
 keymap("n", map.CMD_SHIFT_V, "<C-w><C-v>", opts)
 keymap("n", map.CMD_SHIFT_S, "<C-w><C-s>", opts)
+
+vim.cmd [[
+    fun! SetupCommandAlias(from, to)
+        exec 'cnoreabbrev <expr> '.a:from
+            \ .' ((getcmdtype() is# ":" && getcmdline() is# "'.a:from.'")'
+            \ .'? ("'.a:to.'") : ("'.a:from.'"))'
+    endfun
+    call SetupCommandAlias("git","Git")
+]]
