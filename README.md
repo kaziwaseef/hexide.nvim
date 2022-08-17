@@ -75,9 +75,6 @@ ln -s $(pwd)/plugin/ ${HOME}/.config/nvim/
 ```
 Goto the plugin.lua file and save it to auto install all plugins
 ```
-```
-Use :Mason to install prettierd
-```
 
 ### Prerequisites
 

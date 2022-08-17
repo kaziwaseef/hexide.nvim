@@ -18,8 +18,20 @@ vim.g["NERDTreeMinimalUI"] = 1
 vim.g["NERDTreeWinPos"] = 'right'
 vim.g["NERDTreeIgnore"] = {'.DS_Store'}
 
-vim.g['g:NERDTreeGitStatusUseNerdFonts'] = 1
-vim.g['g:NERDTreeGitStatusShowIgnored'] = 1
+vim.g['NERDTreeGitStatusUseNerdFonts'] = 1
+vim.g['NERDTreeGitStatusShowIgnored'] = 1
+vim.g['NERDTreeGitStatusIndicatorMapCustom'] = {
+    Modified  ='✹',
+    Staged    ='✚',
+    Untracked ='✭',
+    Renamed   ='➜',
+    Unmerged  ='═',
+    Deleted   ='✖',
+    Dirty     ='✗',
+    Ignored   ='',
+    Clean     ='✔︎',
+    Unknown   ='?',
+}
 
 -- Close nvim if NERDtree is the last buffer
 vim.api.nvim_command("autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif")
@@ -45,30 +57,3 @@ vim.cmd [[
     autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 ]]
 
--- vim.cmd [[
---     function! GitDimIgnoredFiles()
---         let gitcmd = 'git -c color.status=false status -s --ignored'
---         if exists('b:NERDTree')
---             let root = b:NERDTree.root.path.str()
---         else
---             let root = './'
---         endif
---         let files = split(system(gitcmd.' '.root), '\n')
---
---         call GitFindIgnoredFiles(files)
---     endfunction
---
---     function! GitFindIgnoredFiles(files)
---         for file in a:files
---             let pre = file[0:1]
---             if pre == '!!'
---                 let ignored = split(file[3:], '/')[-1]
---                 let theCommand = 'syn match Comment #\<'.escape(ignored, '~').'\(\.\)\@!\># containedin=NERDTreeFile'
---                 echoerr theCommand
---                 exec theCommand
---             endif
---         endfor
---     endfunction
---
---     autocmd FileType nerdtree :call GitDimIgnoredFiles()
--- ]]

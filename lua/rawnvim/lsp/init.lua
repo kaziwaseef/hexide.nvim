@@ -4,11 +4,12 @@ require("mason").setup({
             package_installed = "✓",
             package_pending = "➜",
             package_uninstalled = "✗"
-        }
+        },
+        border = "rounded"
     }
 })
 
-local servers = {
+local lspServers = {
     "bashls", -- Bash
     "cssls", -- CSS | Setup Completion
     "dockerls", -- Docker
@@ -26,13 +27,24 @@ local servers = {
     "jsonls", -- Json schema
 }
 
+local nonLspServers = {
+    "prettierd",
+    "stylua",
+}
+
+require'mason-tool-installer'.setup {
+    ensure_installed = nonLspServers,
+    auto_update = true,
+    run_on_start = true,
+}
+
 require("mason-lspconfig").setup({
-    ensure_installed = servers,
+    ensure_installed = lspServers,
     automatic_installation = true,
 })
 
 
-for _, server in pairs(servers) do
+for _, server in pairs(lspServers) do
     local opts = {
         on_attach = require("rawnvim.lsp.handlers").on_attach,
         capabilities = require("rawnvim.lsp.handlers").capabilities,

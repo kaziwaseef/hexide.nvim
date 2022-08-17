@@ -75,7 +75,10 @@ return packer.startup(function(use)
         "rafamadriz/friendly-snippets", -- a bunch of snippets to use
     }
     -- Telescope
-    use "nvim-telescope/telescope.nvim"
+    use {
+        "nvim-telescope/telescope.nvim",
+        'nvim-telescope/telescope-ui-select.nvim',
+    }
 
     -- File Tree
     use {
@@ -95,7 +98,8 @@ return packer.startup(function(use)
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
-        'jose-elias-alvarez/null-ls.nvim'
+        'jose-elias-alvarez/null-ls.nvim',
+        'WhoIsSethDaniel/mason-tool-installer.nvim',
     }
 
     -- Git
