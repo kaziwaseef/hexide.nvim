@@ -96,10 +96,13 @@ return packer.startup(function(use)
     -- LSP
     use {
         "williamboman/mason.nvim",
+        'WhoIsSethDaniel/mason-tool-installer.nvim',
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
         'jose-elias-alvarez/null-ls.nvim',
-        'WhoIsSethDaniel/mason-tool-installer.nvim',
+    }
+    use {
+        'akinsho/flutter-tools.nvim'
     }
 
     -- Git
@@ -110,10 +113,7 @@ return packer.startup(function(use)
 
     -- Comment
     use {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
+        'tpope/vim-commentary'
     }
 
     use {
@@ -127,8 +127,11 @@ return packer.startup(function(use)
         end
     }
 
-    use 'machakann/vim-highlightedyank'
-
+    -- Yank
+    use {
+        'vim-scripts/ReplaceWithRegister',
+        'machakann/vim-highlightedyank'
+    }
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
