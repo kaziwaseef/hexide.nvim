@@ -82,6 +82,9 @@ local function lsp_keymaps(bufnr)
     keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
     vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
     keymap(bufnr, 'n', '<leader>f', ':Format<CR>', opts)
+    vim.cmd [[
+        autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md Format
+    ]]
 end
 
 function M.on_attach(client, bufnr)
