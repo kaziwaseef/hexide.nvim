@@ -121,3 +121,4 @@ keymap(
     opts
 )
 keymap("n", map.CMD_f, "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>gd", "<cmd>Telescope lsp_definitions<CR>", opts)
