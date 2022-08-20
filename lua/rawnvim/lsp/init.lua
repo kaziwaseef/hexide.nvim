@@ -11,25 +11,24 @@ require("mason").setup({
 
 local lspServers = {
 	"bashls", -- Bash
-	"cssls", -- CSS | Setup Completion
+	-- "cssls", -- CSS | Setup Completion
 	"dockerls", -- Docker
-	"eslint", -- Eslint
 	"graphql", -- Graphql
 	"gopls", -- Go
 	"html", -- HTML | Setup Completion
 	"rust_analyzer", -- Rust
-	"tailwindcss", -- Tailwind Css Library
+	-- "tailwindcss", -- Tailwind Css Library
 	"terraformls", -- Terraform (Public API)
 	"tsserver", -- Typescript and Javascript
 	-- "volar", -- Vue 3 | Setup Take Over Mode
 	"yamlls", -- Yaml schema | Setup Schema
 	"sumneko_lua", -- lua
 	"jsonls", -- Json schema
-    "dartls",
+	-- "dartls",
 }
 
 local nonLspServers = {
-	"prettierd",
+	"prettier",
 	"stylua",
 }
 

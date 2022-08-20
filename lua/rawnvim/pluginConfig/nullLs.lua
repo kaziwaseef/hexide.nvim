@@ -3,6 +3,6 @@ require("null-ls").setup({
         require("null-ls").builtins.formatting.stylua,
         require("null-ls").builtins.diagnostics.eslint,
         require("null-ls").builtins.completion.spell,
-        require("null-ls").builtins.formatting.prettierd,
+        require("null-ls").builtins.formatting.prettier,
     },
 })

@@ -52,7 +52,8 @@ return packer.startup(function(use)
         'joshdick/onedark.vim',
     }
     use {
-        'itchyny/lightline.vim',
+        -- 'itchyny/lightline.vim',
+        'vim-airline/vim-airline',
         'kyazdani42/nvim-web-devicons',
     }
     use {
