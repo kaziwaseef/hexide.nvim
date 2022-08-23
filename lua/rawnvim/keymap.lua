@@ -25,9 +25,11 @@ local map = {
 keymap("v", map.CMD_c, '"*y', opts)
 
 -- Save with CMD_s
-keymap("n", map.CMD_s, ":w<cr>", opts)
-keymap("v", map.CMD_s, "<C-c>:w<cr>", opts)
-keymap("i", map.CMD_s, "<C-c>:w<cr>", opts)
+-- keymap("n", map.CMD_s, ":w<cr>", opts)
+-- keymap("v", map.CMD_s, "<C-c>:w<cr>", opts)
+-- keymap("i", map.CMD_s, "<C-c>:w<cr>", opts)
+
+keymap("n", '<leader>s', ":w<cr>", opts)
 
 -- Move Lines
 keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
@@ -47,6 +49,9 @@ keymap("n", map.CMD_SHIFT_S, "<C-w><C-s>", opts)
 keymap('n', map.CMD_slash, 'gcc', {})
 keymap('v', map.CMD_slash, 'gcgv', {})
 keymap('i', map.CMD_slash, '<C-c>gcc', {})
+
+-- Eslint
+keymap('n', '<leader>ee', '<cmd>e %<CR>', opts)
 
 vim.cmd([[
     fun! SetupCommandAlias(from, to)

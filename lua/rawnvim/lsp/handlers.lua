@@ -76,13 +76,30 @@ local function lsp_keymaps(bufnr)
 	-- keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 	keymap(bufnr, "n", "<leader>fm", ":Format<CR>", opts)
-	vim.cmd([[
-        autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md Format
-    ]])
+	local autoFormatFiles = {
+		"*.js",
+		"*.jsx",
+		"*.mjs",
+		"*.ts",
+		"*.tsx",
+		"*.css",
+		"*.less",
+		"*.scss",
+		"*.json",
+		"*.graphql",
+		"*.lua",
+		"*.dart",
+	}
+	vim.cmd(string.format(
+		[[
+            autocmd BufWritePre %s Format
+        ]],
+		table.concat(autoFormatFiles, ",")
+	))
 end
 
 function M.on_attach(client, bufnr)
-	if client.name == "tsserver" then
+	if client.name == "tsserver" or client.name == "sumneko_lua" then
 		client.resolved_capabilities.document_formatting = false
 	end
 	lsp_keymaps(bufnr)
