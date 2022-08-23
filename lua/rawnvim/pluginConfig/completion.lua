@@ -44,9 +44,7 @@ local kind_icons = {
 	TypeParameter = "",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
-local map = {
-	CMD_i = "<C-s>",
-}
+local map = require("rawnvim.osKeyMap").mapping
 
 cmp.setup({
 	snippet = {
