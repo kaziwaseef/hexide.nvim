@@ -71,7 +71,7 @@ function M.setup(override)
 	elseif vim.loop.os_uname().sysname == "Darwin" then
 		M.mapping = mac_map
 	else
-		M.mappM.mappM.mapping = regular_map
+		M.mapping = regular_map
 	end
 end
 
