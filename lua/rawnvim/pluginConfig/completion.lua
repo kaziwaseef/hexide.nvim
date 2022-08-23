@@ -44,6 +44,9 @@ local kind_icons = {
 	TypeParameter = "",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
+local map = {
+	CMD_i = "<C-s>",
+}
 
 cmp.setup({
 	snippet = {
@@ -64,6 +67,7 @@ cmp.setup({
 		-- },
 		-- Accept currently selected item. If none selected, `select` first item.
 		-- Set `select` to `false` to only confirm explicitly selected items.
+		[map.CMD_i] = cmp.mapping.complete({}),
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
@@ -111,11 +115,11 @@ cmp.setup({
 		end,
 	},
 	sources = {
+		{ name = "path" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
-		{ name = "path" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,

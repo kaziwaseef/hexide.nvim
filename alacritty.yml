@@ -47,18 +47,19 @@ shell:
 
 key_bindings:
   - { key: B,              mods: Command,       chars: "\x02"       } # <Cmd-b> => <Ctrl-b>
-  - { key: I,              mods: Command,       chars: "\x09"       } # <Cmd-i> => <Ctrl-i>
+  - { key: I,              mods: Command,       chars: "\x13"       } # <Cmd-i> => <Ctrl-s>
+  # - { key: I,              mods: Command,       chars: "\x09"       } # <Cmd-i> => <Ctrl-i>
   - { key: O,              mods: Command,       chars: "\x0F"       } # <Cmd-o> => <Ctrl-o>
   - { key: T,              mods: Command,       chars: "\x14"       } # <Cmd-t> => <Ctrl-t>
   - { key: T,              mods: Command|Shift, chars: "†"          } # <Cmd-Shift-t> => <Opt-t>
-  - { key: S,              mods: Command,       chars: "\x13"       } # <Cmd-s> => <Ctrl-s>
+  # - { key: S,              mods: Command,       chars: "\x13"       } # <Cmd-s> => <Ctrl-s>
   - { key: C,              mods: Command,       chars: "\x19"       } # <Cmd-c> => <Ctrl-y>
   - { key: Slash,          mods: Command,       chars: "\x05"       } # <Cmd-/> => <Ctrl-e>
   - { key: P,              mods: Command,       chars: "\x10"       } # <Cmd-p> => <Ctrl-p>
   - { key: P,              mods: Command|Shift, chars: "++"         } # <Cmd-Shift-p> => ++
   - { key: F,              mods: Command,       chars: "+-"         } # <Cmd-f> => +-
   - { key: F,              mods: Command|Shift, chars: "+f"         } # <Cmd-Shift-f> => +f
-  - { key: I,              mods: Command,       chars: ""         } # <Cmd-i> => <Ctrl--> 
+  # - { key: I,              mods: Command,       chars: ""         } # <Cmd-i> => <Ctrl--> 
   - { key: Key1,           mods: Command,       chars: "¡"          } # <Cmd-1> => <Opt-1> 
   - { key: Key2,           mods: Command,       chars: "™"          } # <Cmd-2> => <Opt-2> 
   - { key: Key3,           mods: Command,       chars: "£"          } # <Cmd-3> => <Opt-3> 
