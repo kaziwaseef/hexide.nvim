@@ -1,5 +1,5 @@
 require("rawnvim.option")
-require("rawnvim.osKeyMap").setup("regular")
+require("rawnvim.osKeyMap").setup()
 require("rawnvim.keymap")
 require("rawnvim.plugin")
 require("rawnvim.colorscheme")
