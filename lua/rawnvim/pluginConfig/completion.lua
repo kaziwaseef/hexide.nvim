@@ -45,7 +45,6 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 local map = require("rawnvim.osKeyMap").mapping
-
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -65,7 +64,7 @@ cmp.setup({
 		-- },
 		-- Accept currently selected item. If none selected, `select` first item.
 		-- Set `select` to `false` to only confirm explicitly selected items.
-		[map.CMD_i] = cmp.mapping.complete({}),
+		[map.CMD_i] = cmp.mapping.complete(),
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
