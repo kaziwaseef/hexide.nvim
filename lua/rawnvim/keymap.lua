@@ -34,6 +34,9 @@ keymap("n", map.CMD_SHIFT_S, "<C-w><C-s>", opts)
 -- Eslint
 keymap("n", "<leader>ee", "<cmd>e %<CR>", opts)
 
+keymap("n", "<leader>u", "<C-u>", opts)
+keymap("n", "<leader>d", "<C-d>", opts)
+
 vim.cmd([[
     fun! SetupCommandAlias(from, to)
         exec 'cnoreabbrev <expr> '.a:from

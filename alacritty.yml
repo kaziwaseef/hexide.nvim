@@ -96,3 +96,6 @@ key_bindings:
   - { key: S,              mods: Command|Shift, chars: "ß"          } # <Cmd-S> => <Opt-S>
   - { key: S,              mods: Control|Shift, chars: "ß"          } # <Cmd-S> => <Opt-S>
 
+  - { key: U,              mods: Command,       chars: "\x15"          } # <Cmd-u> => <Ctrl-u>
+  - { key: D,              mods: Command,       chars: "\x04"          } # <Cmd-d> => <Ctrl-d>
+

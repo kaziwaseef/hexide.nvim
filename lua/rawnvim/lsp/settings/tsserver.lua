@@ -5,9 +5,9 @@ return {
 	-- 	"--tsserver-log-verbosity=verbose",
 	-- 	"--stdio",
 	-- },
-	-- init_options = {
-	-- 	hostInfo = "neovim",
-	-- 	logVerbosity = "verbose",
-	-- 	maxTsServerMemory = 6000,
-	-- },
+	init_options = {
+		hostInfo = "neovim",
+		-- logVerbosity = "verbose",
+		maxTsServerMemory = 6000,
+	},
 }
