@@ -136,6 +136,11 @@ return packer.startup(function(use)
 
 	-- Show context on the top
 	use({ "wellle/context.vim" })
+
+	-- Motions
+	use({
+		"bkad/CamelCaseMotion",
+	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
