@@ -134,9 +134,6 @@ return packer.startup(function(use)
 		"machakann/vim-highlightedyank",
 	})
 
-	-- Show context on the top
-	use({ "wellle/context.vim" })
-
 	-- Motions
 	use({
 		"bkad/CamelCaseMotion",
