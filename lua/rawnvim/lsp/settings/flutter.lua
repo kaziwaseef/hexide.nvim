@@ -15,3 +15,8 @@ keymap("n", "gl", '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR
 keymap("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 
 keymap("n", "<leader>fo", ":FlutterOutlineToggle<CR>", opts)
+keymap("n", "<leader>fd", ":FlutterDevices<CR>", opts)
+keymap("n", "<leader>fe", ":FlutterEmulators<CR>", opts)
+keymap("n", "<leader>ft", ":FlutterOpenDevTools<CR>", opts)
+keymap("n", "<leader>fr", ":FlutterReload<CR>", opts)
+keymap("n", "<leader>fR", ":FlutterRestart<CR>", opts)
