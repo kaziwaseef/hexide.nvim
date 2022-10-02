@@ -71,7 +71,7 @@ local function lsp_keymaps(bufnr)
 		"*.scss",
 		"*.json",
 		"*.graphql",
-		"*.lua",
+		-- "*.lua",
 		"*.dart",
 	}
 	vim.cmd(string.format(
@@ -84,7 +84,7 @@ end
 
 function M.on_attach(client, bufnr)
 	if client.name ~= "null-ls" then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.document_formatting = false
 	end
 	lsp_keymaps(bufnr)
 	-- lsp_highlight_document(client)
