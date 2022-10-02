@@ -58,7 +58,7 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>', opts)
 	keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 
-	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
 	keymap(bufnr, "n", "<leader>fm", ":Format<CR>", opts)
 	local autoFormatFiles = {
 		"*.js",
@@ -71,7 +71,7 @@ local function lsp_keymaps(bufnr)
 		"*.scss",
 		"*.json",
 		"*.graphql",
-		-- "*.lua",
+		"*.lua",
 		"*.dart",
 	}
 	vim.cmd(string.format(
@@ -84,7 +84,7 @@ end
 
 function M.on_attach(client, bufnr)
 	if client.name ~= "null-ls" then
-		client.server_capabilities.document_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
 	end
 	lsp_keymaps(bufnr)
 	-- lsp_highlight_document(client)
