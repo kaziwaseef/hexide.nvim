@@ -11,7 +11,6 @@ require("mason").setup({
 
 local lspServers = {
 	"bashls", -- Bash
-	-- "cssls", -- CSS | Setup Completion
 	"dockerls", -- Docker
 	"graphql", -- Graphql
 	"gopls", -- Go
@@ -20,11 +19,10 @@ local lspServers = {
 	-- "tailwindcss", -- Tailwind Css Library
 	"terraformls", -- Terraform (Public API)
 	"tsserver", -- Typescript and Javascript
-	-- "volar", -- Vue 3 | Setup Take Over Mode
+	"volar", -- Vue 3 | Setup Take Over Mode
 	"yamlls", -- Yaml schema | Setup Schema
 	"sumneko_lua", -- lua
 	"jsonls", -- Json schema
-	-- "dartls",
 }
 
 local nonLspServers = {
