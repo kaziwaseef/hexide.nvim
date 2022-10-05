@@ -73,6 +73,7 @@ local function lsp_keymaps(bufnr)
 		"*.graphql",
 		"*.lua",
 		"*.dart",
+		"*.vue",
 	}
 	vim.cmd(string.format(
 		[[
