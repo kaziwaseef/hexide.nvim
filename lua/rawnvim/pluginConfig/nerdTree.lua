@@ -12,6 +12,7 @@ keymap("n", map.CMD_SHIFT_T, ":NERDTreeFind<CR>", opts)
 
 vim.g["NERDTreeShowHidden"] = 1
 vim.g["NERDTreeMinimalUI"] = 1
+vim.g["NERDTreeMinimalMenu"] = 1
 vim.g["NERDTreeWinPos"] = "right"
 vim.g["NERDTreeIgnore"] = { ".DS_Store" }
 
