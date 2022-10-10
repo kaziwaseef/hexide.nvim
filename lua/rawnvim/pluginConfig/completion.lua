@@ -39,7 +39,6 @@ local kind_icons = {
 	TypeParameter = "",
 }
 
--- find more here: https://www.nerdfonts.com/cheat-sheet
 local map = require("rawnvim.osKeyMap").mapping
 cmp.setup({
 	snippet = {
@@ -69,12 +68,14 @@ cmp.setup({
 		-- 	"s",
 		-- }),
 	},
+
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
 			-- Kind icons
 			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+
 			vim_item.menu = ({
 				path = "[Path]",
 				buffer = "[Buffer]",
@@ -87,7 +88,12 @@ cmp.setup({
 	},
 	sources = {
 		{ name = "path" },
-		{ name = "nvim_lsp" },
+		{
+			name = "nvim_lsp",
+			entry_filter = function(entry)
+				return require("cmp").lsp.CompletionItemKind.Text ~= entry:get_kind()
+			end,
+		},
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
 		{ name = "buffer" },

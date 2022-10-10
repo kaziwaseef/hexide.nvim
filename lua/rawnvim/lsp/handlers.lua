@@ -87,6 +87,8 @@ function M.on_attach(client, bufnr)
 	if client.name ~= "null-ls" then
 		client.server_capabilities.documentFormattingProvider = false
 	end
+	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+	vim.api.nvim_buf_set_option(bufnr, "tagfunc", "v:lua.vim.lsp.tagfunc")
 	lsp_keymaps(bufnr)
 	-- lsp_highlight_document(client)
 end
