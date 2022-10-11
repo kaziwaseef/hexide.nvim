@@ -14,15 +14,16 @@ local lspServers = {
 	"dockerls", -- Docker
 	"graphql", -- Graphql
 	"gopls", -- Go
-	"html", -- HTML | Setup Completion
+	"html", -- HTML
 	"rust_analyzer", -- Rust
-	-- "tailwindcss", -- Tailwind Css Library
+	"tailwindcss", -- Tailwind Css Library
 	"terraformls", -- Terraform (Public API)
 	"tsserver", -- Typescript and Javascript
-	"volar", -- Vue 3 | Setup Take Over Mode
+	"volar", -- Vue 3
 	"yamlls", -- Yaml schema | Setup Schema
 	"sumneko_lua", -- lua
 	"jsonls", -- Json schema
+	-- "cssls"
 }
 
 local nonLspServers = {
