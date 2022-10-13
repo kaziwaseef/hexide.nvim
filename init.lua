@@ -13,4 +13,4 @@ require("rawnvim.pluginConfig.nerdTree")
 require("rawnvim.pluginConfig.nullLs")
 require("rawnvim.pluginConfig.motion")
 
-vim.lsp.set_log_level("debug")
+-- vim.lsp.set_log_level("debug")
