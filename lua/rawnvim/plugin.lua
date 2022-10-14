@@ -106,7 +106,9 @@ return packer.startup(function(use)
 	-- Git
 	use({
 		"tpope/vim-fugitive",
-		"lewis6991/gitsigns.nvim",
+		-- "lewis6991/gitsigns.nvim",
+		"kdheepak/lazygit.nvim",
+		"tanvirtin/vgit.nvim",
 	})
 
 	-- Comment

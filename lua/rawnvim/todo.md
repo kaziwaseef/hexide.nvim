@@ -2,12 +2,11 @@
 
 ### Version 1.0
 - [x] Setup Markdown preview thing
-- [ ] Replace with register plugin
-- [ ] How to fix merge conflicts (maybe lazygit)
-- [ ] Git history in files like GitLens
+- [x] Replace with register plugin
+- [x] How to fix merge conflicts (maybe lazygit)
+- [x] Git history in files like GitLens
 - [x] CMD_j and CMD_k used in nvim_cmp up down so split movement is not working as per requirement so need to update split movement
-- [ ] Setup CMD_k doc scrolling
-- [ ] Custom Snippets
+- [x] Setup CMD_k doc scrolling
 
 ### Version 1.1
 - [ ] Setup DadBod, DadBod Ssh and DadBod UI for mysql, postgres and mongodb
