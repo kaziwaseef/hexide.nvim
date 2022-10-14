@@ -14,6 +14,8 @@ local map = require("rawnvim.osKeyMap").mapping
 
 -- Copy to OS Clipboard
 keymap("v", map.CMD_c, '"*y', opts)
+-- Keep cursor in the same place for v select
+keymap("v", "y", "ygv<Esc>", opts)
 
 -- Write Buffer
 keymap("n", "<leader>s", ":w<cr>", opts)

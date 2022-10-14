@@ -128,7 +128,6 @@ return packer.startup(function(use)
 	-- Yank
 	use({
 		"vim-scripts/ReplaceWithRegister",
-		"machakann/vim-highlightedyank",
 	})
 
 	-- Motions
