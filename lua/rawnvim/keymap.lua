@@ -24,10 +24,10 @@ keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 -- Splits
 -- Movement
-keymap("n", map.CMD_j, "<C-w><C-j>", opts)
-keymap("n", map.CMD_k, "<C-w><C-k>", opts)
-keymap("n", map.CMD_l, "<C-w><C-l>", opts)
-keymap("n", map.CMD_h, "<C-w><C-h>", opts)
+keymap("n", map.OPT_j, "<C-w><C-j>", opts)
+keymap("n", map.OPT_k, "<C-w><C-k>", opts)
+keymap("n", map.OPT_l, "<C-w><C-l>", opts)
+keymap("n", map.OPT_h, "<C-w><C-h>", opts)
 -- Make split
 keymap("n", map.CMD_SHIFT_V, "<C-w><C-v>", opts)
 keymap("n", map.CMD_SHIFT_S, "<C-w><C-s>", opts)
