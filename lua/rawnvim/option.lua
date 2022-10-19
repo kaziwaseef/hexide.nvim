@@ -30,7 +30,7 @@ local options = {
 	signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
 	wrap = true, -- display lines as one long line
 	linebreak = true,
-	scroll = 20,
+	scroll = 20, -- this breaks if the terminal is too small
 	scrolloff = 6, -- is one of my fav
 	sidescrolloff = 6,
 }

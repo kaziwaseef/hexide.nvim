@@ -17,7 +17,7 @@ local lspServers = {
 	"html", -- HTML
 	"rust_analyzer", -- Rust
 	"tailwindcss", -- Tailwind Css Library
-	"terraformls", -- Terraform (Public API)
+	-- "terraformls", -- Terraform (Public API)
 	"tsserver", -- Typescript and Javascript
 	"volar", -- Vue 3
 	"yamlls", -- Yaml schema | Setup Schema
