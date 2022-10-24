@@ -7,6 +7,8 @@
 - [x] Git history in files like GitLens
 - [x] CMD_j and CMD_k used in nvim_cmp up down so split movement is not working as per requirement so need to update split movement
 - [x] Setup CMD_k doc scrolling
+- [ ] Setup Far https://github.com/brooth/far.vim
+- [ ] Fix Prettier
 
 ### Version 1.1
 - [ ] Setup DadBod, DadBod Ssh and DadBod UI for mysql, postgres and mongodb
