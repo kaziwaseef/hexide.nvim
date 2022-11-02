@@ -39,114 +39,118 @@ packer.init({
 })
 
 -- Install your plugins here
-return packer.startup(function(use)
-	-- My plugins here
-	use("wbthomason/packer.nvim") -- Have packer manage itself
-	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
-	use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
+return packer.startup({
+	function(use)
+		-- My plugins here
+		use("wbthomason/packer.nvim") -- Have packer manage itself
+		use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
+		use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
 
-	-- Color Schemes
-	use({
-		"joshdick/onedark.vim",
-	})
-	use({
-		"vim-airline/vim-airline",
-		"kyazdani42/nvim-web-devicons",
-	})
-	use({
-		"romgrk/barbar.nvim",
-	})
-	-- cmp plugins
-	use({
-		"hrsh7th/nvim-cmp", -- The completion plugin
-		"hrsh7th/cmp-buffer", -- buffer completions
-		"hrsh7th/cmp-path", -- path completions
-		"hrsh7th/cmp-cmdline", -- cmdline completions
-		"saadparwaiz1/cmp_luasnip", -- snippet completions
-		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/cmp-nvim-lua",
-	})
+		-- Color Schemes
+		use({
+			"joshdick/onedark.vim",
+		})
+		use({
+			"vim-airline/vim-airline",
+			"kyazdani42/nvim-web-devicons",
+		})
+		use({
+			"romgrk/barbar.nvim",
+		})
+		-- cmp plugins
+		use({
+			"hrsh7th/nvim-cmp", -- The completion plugin
+			"hrsh7th/cmp-buffer", -- buffer completions
+			"hrsh7th/cmp-path", -- path completions
+			"hrsh7th/cmp-cmdline", -- cmdline completions
+			"saadparwaiz1/cmp_luasnip", -- snippet completions
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-nvim-lua",
+		})
 
-	-- snippets
-	use({
-		"L3MON4D3/LuaSnip", --snippet engine
-		"rafamadriz/friendly-snippets", -- a bunch of snippets to use
-	})
-	-- Telescope
-	use({
-		"nvim-telescope/telescope.nvim",
-		"nvim-telescope/telescope-ui-select.nvim",
-	})
+		-- snippets
+		use({
+			"L3MON4D3/LuaSnip", --snippet engine
+			"rafamadriz/friendly-snippets", -- a bunch of snippets to use
+		})
+		-- Telescope
+		use({
+			"nvim-telescope/telescope.nvim",
+			"nvim-telescope/telescope-ui-select.nvim",
+		})
 
-	-- File Tree
-	use({
-		"preservim/nerdtree",
-		"Xuyuanp/nerdtree-git-plugin",
-		"ryanoasis/vim-devicons",
-	})
-	-- Treesitter
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
-	})
-	use("p00f/nvim-ts-rainbow")
+		-- File Tree
+		use({
+			"preservim/nerdtree",
+			"Xuyuanp/nerdtree-git-plugin",
+			"ryanoasis/vim-devicons",
+		})
+		-- Treesitter
+		use({
+			"nvim-treesitter/nvim-treesitter",
+			run = ":TSUpdate",
+		})
+		use("p00f/nvim-ts-rainbow")
 
-	-- LSP
-	use({
-		"williamboman/mason.nvim",
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
-		"jose-elias-alvarez/null-ls.nvim",
-	})
-	use({
-		"akinsho/flutter-tools.nvim",
-	})
+		-- LSP
+		use({
+			"williamboman/mason.nvim",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			"neovim/nvim-lspconfig",
+			"jose-elias-alvarez/null-ls.nvim",
+		})
+		use({
+			"akinsho/flutter-tools.nvim",
+		})
 
-	-- Git
-	use({
-		"tpope/vim-fugitive",
-		-- "lewis6991/gitsigns.nvim",
-		"kdheepak/lazygit.nvim",
-		"tanvirtin/vgit.nvim",
-	})
+		-- Git
+		use({
+			"tpope/vim-fugitive",
+			"kdheepak/lazygit.nvim",
+			"tanvirtin/vgit.nvim",
+		})
 
-	-- Comment
-	use({
-		"tpope/vim-commentary",
-	})
+		-- Comment
+		use({
+			"tpope/vim-commentary",
+		})
 
-	use({
-		"JoosepAlviste/nvim-ts-context-commentstring",
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				context_commentstring = {
-					enable = true,
-				},
-			})
-		end,
-	})
+		use({
+			"JoosepAlviste/nvim-ts-context-commentstring",
+			config = function()
+				require("nvim-treesitter.configs").setup({
+					context_commentstring = {
+						enable = true,
+					},
+				})
+			end,
+		})
 
-	-- Yank
-	use({
-		"vim-scripts/ReplaceWithRegister",
-	})
+		-- Yank
+		use({
+			"vim-scripts/ReplaceWithRegister",
+		})
 
-	-- Motions
-	use({
-		"bkad/CamelCaseMotion",
-	})
+		-- Motions
+		use({
+			"bkad/CamelCaseMotion",
+		})
 
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = function()
-			vim.fn["mkdp#util#install"]()
-		end,
-	})
+		use({
+			"iamcco/markdown-preview.nvim",
+			run = function()
+				vim.fn["mkdp#util#install"]()
+			end,
+		})
 
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if PACKER_BOOTSTRAP then
-		require("packer").sync()
-	end
-end)
+		-- Automatically set up your configuration after cloning packer.nvim
+		-- Put this at the end after all plugins
+		if PACKER_BOOTSTRAP then
+			require("packer").sync()
+		end
+	end,
+	config = {
+		clone_timeout = false,
+	},
+})
