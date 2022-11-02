@@ -68,6 +68,7 @@ mkdir -p ${HOME}/.config/nvim
 ln -s $(pwd)/init.lua ${HOME}/.config/nvim/init.lua
 ln -s $(pwd)/lua/ ${HOME}/.config/nvim/
 ln -s $(pwd)/plugin/ ${HOME}/.config/nvim/
+ln -s $(pwd)/lazygit.config.yaml ${HOME}/.config/nvim/lazygit.config.yaml
 ```
 
 ## Install Plugins

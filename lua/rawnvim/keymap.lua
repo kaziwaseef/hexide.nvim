@@ -34,8 +34,11 @@ keymap("n", map.OPT_h, "<C-w><C-h>", opts)
 keymap("n", map.CMD_SHIFT_V, "<C-w><C-v>", opts)
 keymap("n", map.CMD_SHIFT_S, "<C-w><C-s>", opts)
 
--- Eslint
+-- Reload File
 keymap("n", "<leader>ee", "<cmd>e %<CR>", opts)
+
+-- Toggle Highlight
+keymap("n", "<leader>h", ":noh<CR>", opts)
 
 vim.cmd([[
     fun! SetupCommandAlias(from, to)
