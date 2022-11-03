@@ -29,6 +29,7 @@ local lspServers = {
 local nonLspServers = {
 	"prettier",
 	"stylua",
+	"goimports",
 }
 
 require("mason-tool-installer").setup({

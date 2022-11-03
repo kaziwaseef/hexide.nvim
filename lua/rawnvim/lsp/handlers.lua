@@ -74,6 +74,7 @@ local function lsp_keymaps(bufnr)
 		"*.lua",
 		"*.dart",
 		"*.vue",
+		"*.go",
 	}
 	vim.cmd(string.format(
 		[[
