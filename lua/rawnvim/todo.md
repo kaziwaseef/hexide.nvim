@@ -9,6 +9,7 @@
 - [x] Setup CMD_k doc scrolling
 - [ ] Setup Far https://github.com/brooth/far.vim
 - [ ] Fix Prettier
+- [ ] Create Local configs that will not be comitted to git
 
 ### Version 1.1
 - [ ] Setup DadBod, DadBod Ssh and DadBod UI for mysql, postgres and mongodb

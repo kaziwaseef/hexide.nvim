@@ -12,6 +12,7 @@ vim.g.maplocalleader = " "
 -- Alacritty Map
 local map = require("rawnvim.osKeyMap").mapping
 
+keymap("n", "<leader>ru", ":! python3 ~/Documents/runner.py &<CR>", opts)
 -- Copy to OS Clipboard
 keymap("v", map.CMD_c, '"*y', opts)
 -- Keep cursor in the same place for yank
