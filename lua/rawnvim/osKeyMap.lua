@@ -2,6 +2,7 @@ local M = {}
 
 local mac_map = {
 	CMD_c = "<C-c>",
+	CMD_a = "<C-a>",
 	CMD_u = "<C-u>",
 	CMD_j = "<C-j>",
 	CMD_k = "<C-k>",
@@ -38,6 +39,7 @@ local mac_map = {
 
 local regular_map = {
 	CMD_c = "<C-c>",
+	CMD_a = "<C-a>",
 	CMD_u = "<C-u>",
 	CMD_j = "<C-j>",
 	CMD_k = "<C-k>",

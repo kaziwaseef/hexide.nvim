@@ -14,11 +14,15 @@ local map = require("rawnvim.osKeyMap").mapping
 
 -- Copy to OS Clipboard
 keymap("v", map.CMD_c, '"*y', opts)
--- Keep cursor in the same place for v select
+-- Keep cursor in the same place for yank
 keymap("v", "y", "ygv<Esc>", opts)
 
+-- Select all
+keymap("n", map.CMD_a, "ggVG", opts)
+keymap("v", map.CMD_a, "<Esc>ggVG", opts)
+
 -- Write Buffer
-keymap("n", "<leader>s", ":w<cr>", opts)
+keymap("n", "<leader>s", ":w<CR>", opts)
 
 -- Move Lines
 keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
