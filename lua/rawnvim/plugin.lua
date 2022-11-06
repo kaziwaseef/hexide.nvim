@@ -144,6 +144,11 @@ return packer.startup({
 			end,
 		})
 
+		-- Calculator
+		use({
+			"fedorenchik/vimcalc3",
+		})
+
 		-- Automatically set up your configuration after cloning packer.nvim
 		-- Put this at the end after all plugins
 		if PACKER_BOOTSTRAP then
