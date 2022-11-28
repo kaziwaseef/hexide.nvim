@@ -24,12 +24,14 @@ local lspServers = {
 	"sumneko_lua", -- lua
 	"jsonls", -- Json schema
 	-- "cssls"
+	"solargraph",
 }
 
 local nonLspServers = {
 	"prettier",
 	"stylua",
 	"goimports",
+	-- "rubocop",
 }
 
 require("mason-tool-installer").setup({

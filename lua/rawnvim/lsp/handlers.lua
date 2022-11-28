@@ -58,7 +58,8 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>', opts)
 	keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 
-	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting_sync()' ]])
+	-- vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting_sync()' ]])
+	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format()' ]])
 	keymap(bufnr, "n", "<leader>fm", ":Format<CR>", opts)
 	local autoFormatFiles = {
 		"*.js",

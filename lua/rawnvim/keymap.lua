@@ -12,6 +12,13 @@ vim.g.maplocalleader = " "
 -- Alacritty Map
 local map = require("rawnvim.osKeyMap").mapping
 
+vim.cmd([[
+vnoremap <expr> j v:count ? 'j' : 'gj'
+vnoremap <expr> k v:count ? 'k' : 'gk'
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+]])
+
 keymap("n", "<leader>ru", ":! python3 ~/Documents/runner.py &<CR>", opts)
 -- Copy to OS Clipboard
 keymap("v", map.CMD_c, '"*y', opts)
