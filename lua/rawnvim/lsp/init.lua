@@ -25,6 +25,7 @@ local lspServers = {
 	"jsonls", -- Json schema
 	-- "cssls"
 	"solargraph",
+	"prismals",
 }
 
 local nonLspServers = {

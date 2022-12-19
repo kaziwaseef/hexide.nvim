@@ -76,6 +76,7 @@ local function lsp_keymaps(bufnr)
 		"*.dart",
 		"*.vue",
 		"*.go",
+		"*.prisma",
 	}
 	vim.cmd(string.format(
 		[[
@@ -86,7 +87,7 @@ local function lsp_keymaps(bufnr)
 end
 
 function M.on_attach(client, bufnr)
-	if client.name ~= "null-ls" then
+	if client.name ~= "null-ls" and client.name ~= "prismals" then
 		client.server_capabilities.documentFormattingProvider = false
 	end
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
