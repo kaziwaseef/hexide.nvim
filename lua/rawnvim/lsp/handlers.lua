@@ -59,7 +59,7 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 
 	-- vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting_sync()' ]])
-	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format()' ]])
+	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
 	keymap(bufnr, "n", "<leader>fm", ":Format<CR>", opts)
 	local autoFormatFiles = {
 		"*.js",
@@ -76,7 +76,7 @@ local function lsp_keymaps(bufnr)
 		"*.dart",
 		"*.vue",
 		"*.go",
-		"*.prisma",
+		-- "*.prisma",
 	}
 	vim.cmd(string.format(
 		[[

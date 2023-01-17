@@ -116,3 +116,4 @@ keymap(
 )
 keymap("n", map.CMD_f, "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>gs", "<cmd>Telescope lsp_document_symbols<CR>", opts)
+keymap("n", "<leader>ae", "<cmd>lua require'telescope.builtin'.diagnostics()<cr>", opts)
