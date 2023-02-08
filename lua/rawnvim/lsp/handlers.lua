@@ -43,6 +43,31 @@ function M.setup()
 	})
 end
 
+vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
+
+local autoFormatFiles = {
+	"*.js",
+	"*.jsx",
+	"*.mjs",
+	"*.ts",
+	"*.tsx",
+	"*.css",
+	"*.less",
+	"*.scss",
+	"*.json",
+	"*.graphql",
+	"*.lua",
+	"*.dart",
+	"*.vue",
+	"*.go",
+	-- "*.prisma",
+}
+vim.cmd(string.format(
+	[[
+            autocmd BufWritePre %s Format
+        ]],
+	table.concat(autoFormatFiles, ",")
+))
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	local keymap = vim.api.nvim_buf_set_keymap
@@ -59,31 +84,7 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 
 	-- vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting_sync()' ]])
-	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
 	keymap(bufnr, "n", "<leader>fm", ":Format<CR>", opts)
-	local autoFormatFiles = {
-		"*.js",
-		"*.jsx",
-		"*.mjs",
-		"*.ts",
-		"*.tsx",
-		"*.css",
-		"*.less",
-		"*.scss",
-		"*.json",
-		"*.graphql",
-		"*.lua",
-		"*.dart",
-		"*.vue",
-		"*.go",
-		-- "*.prisma",
-	}
-	vim.cmd(string.format(
-		[[
-            autocmd BufWritePre %s Format
-        ]],
-		table.concat(autoFormatFiles, ",")
-	))
 end
 
 function M.on_attach(client, bufnr)
