@@ -52,6 +52,10 @@ keymap("n", "<leader>ee", "<cmd>e %<CR>", opts)
 -- Toggle Highlight
 keymap("n", "<leader>h", ":noh<CR>", opts)
 
+-- Indent Selected Lines
+keymap("v", ">", ">gv", opts)
+keymap("v", "<", "<gv", opts)
+
 vim.cmd([[
     fun! SetupCommandAlias(from, to)
         exec 'cnoreabbrev <expr> '.a:from
