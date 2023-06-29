@@ -21,7 +21,7 @@ local lspServers = {
 	"tsserver", -- Typescript and Javascript
 	"volar", -- Vue 3
 	"yamlls", -- Yaml schema | Setup Schema
-	-- "sumneko_lua", -- lua
+	"lua_ls", -- lua
 	"jsonls", -- Json schema
 	-- "cssls"
 	"solargraph",

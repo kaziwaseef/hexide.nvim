@@ -106,6 +106,9 @@ return packer.startup({
 		use({
 			"mfussenegger/nvim-dap",
 		})
+		use({
+			"j-hui/fidget.nvim",
+		})
 
 		-- Git
 		use({
@@ -147,10 +150,8 @@ return packer.startup({
 			end,
 		})
 
-		-- Calculator
-		use({
-			"fedorenchik/vimcalc3",
-		})
+		-- Find and Replace
+		use({ "nvim-pack/nvim-spectre" })
 
 		-- Automatically set up your configuration after cloning packer.nvim
 		-- Put this at the end after all plugins
