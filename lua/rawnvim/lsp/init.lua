@@ -21,7 +21,7 @@ local lspServers = {
 	"tsserver", -- Typescript and Javascript
 	"volar", -- Vue 3
 	"yamlls", -- Yaml schema | Setup Schema
-	"sumneko_lua", -- lua
+	-- "sumneko_lua", -- lua
 	"jsonls", -- Json schema
 	-- "cssls"
 	"solargraph",
@@ -64,4 +64,5 @@ for _, server in pairs(lspServers) do
 end
 
 require("rawnvim.lsp.handlers").setup()
+require("lspconfig").dartls.setup(require("rawnvim.lsp.settings.dartls"))
 require("rawnvim.lsp.flutter-tools")

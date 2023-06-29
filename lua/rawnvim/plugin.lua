@@ -103,6 +103,9 @@ return packer.startup({
 		use({
 			"akinsho/flutter-tools.nvim",
 		})
+		use({
+			"mfussenegger/nvim-dap",
+		})
 
 		-- Git
 		use({
