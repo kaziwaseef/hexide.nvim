@@ -13,6 +13,7 @@ require("rawnvim.pluginConfig.barbar")
 require("rawnvim.pluginConfig.nerdTree")
 require("rawnvim.pluginConfig.nullLs")
 require("rawnvim.pluginConfig.motion")
-require("rawnvim.pluginConfig.vimcalc3")
+require("rawnvim.pluginConfig.spectre")
+require("rawnvim.pluginConfig.fidget")
 
 -- vim.lsp.set_log_level("debug")
