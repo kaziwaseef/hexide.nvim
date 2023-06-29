@@ -7,16 +7,6 @@
 - [x] Git history in files like GitLens
 - [x] CMD_j and CMD_k used in nvim_cmp up down so split movement is not working as per requirement so need to update split movement
 - [x] Setup CMD_k doc scrolling
-- [ ] Setup Far https://github.com/brooth/far.vim
-- [ ] Fix Prettier
+- [x] Setup Find and Replace
+- [x] Fix Prettier
 - [ ] Create Local configs that will not be comitted to git
-
-### Version 1.1
-- [ ] Setup DadBod, DadBod Ssh and DadBod UI for mysql, postgres and mongodb
-- [ ] Setup Ssh to servers
-    - [ ] use Netrw
-    - [ ] learn to use Netrw
-    - [ ] remove NerdTree
-    - [ ] create plugin for ssh server credentials
-    - [x] no regrets
-- [ ] Create Super Curl
