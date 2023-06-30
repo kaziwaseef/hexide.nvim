@@ -15,7 +15,7 @@ local lspServers = {
 	"graphql", -- Graphql
 	"gopls", -- Go
 	"html", -- HTML
-	"rust_analyzer", -- Rust
+	-- "rust_analyzer", -- Rust
 	"tailwindcss", -- Tailwind Css Library
 	-- "terraformls", -- Terraform (Public API)
 	"tsserver", -- Typescript and Javascript
