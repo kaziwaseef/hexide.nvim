@@ -39,7 +39,7 @@ local kind_icons = {
 	TypeParameter = "",
 }
 
-local map = require("rawnvim.osKeyMap").mapping
+local map = require("hexide.nvim.osKeyMap").mapping
 cmp.setup({
 	snippet = {
 		expand = function(args)

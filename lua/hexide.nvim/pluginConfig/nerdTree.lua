@@ -3,7 +3,7 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- Alacritty Map
-local map = require("rawnvim.osKeyMap").mapping
+local map = require("hexide.nvim.osKeyMap").mapping
 
 -- Toggle NERDtree
 keymap("n", map.CMD_t, ":NERDTreeToggle<CR>", opts)

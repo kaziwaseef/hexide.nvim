@@ -4,7 +4,7 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- Alacritty Map
-local map = require("rawnvim.osKeyMap").mapping
+local map = require("hexide.nvim.osKeyMap").mapping
 
 keymap("n", map.CMD_f, '<cmd>lua require("spectre").open()<CR>', opts)
 keymap("n", "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', opts)
