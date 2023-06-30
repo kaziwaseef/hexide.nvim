@@ -16,6 +16,23 @@ local commonPlugins = {
 	"nvim-lua/popup.nvim",
 	"nvim-lua/plenary.nvim",
 	"vim-scripts/ReplaceWithRegister",
+	"tpope/vim-commentary",
+	{
+		"JoosepAlviste/nvim-ts-context-commentstring",
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				context_commentstring = {
+					enable = true,
+				},
+			})
+		end,
+	},
+	{
+		"iamcco/markdown-preview.nvim",
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	},
 }
 
 local colorSchemes = {
