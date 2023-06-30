@@ -1,15 +1,3 @@
-local opts = { noremap = true, silent = true }
-
-local keymap = vim.api.nvim_set_keymap
-
--- Alacritty Map
-local map = require("hexide.nvim.osKeyMap").mapping
-
--- Toggle NERDtree
-keymap("n", map.CMD_t, ":NERDTreeToggle<CR>", opts)
--- Find and Focus file in NERDtree
-keymap("n", map.CMD_SHIFT_T, ":NERDTreeFind<CR>", opts)
-
 vim.g["NERDTreeShowHidden"] = 1
 vim.g["NERDTreeMinimalUI"] = 1
 vim.g["NERDTreeMinimalMenu"] = 1
@@ -56,3 +44,32 @@ vim.cmd([[
 vim.cmd([[
     autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 ]])
+
+-- Alacritty Map
+local map = require("hexide.osKeyMap").mapping
+
+local M = {
+	{
+		"preservim/nerdtree",
+		lazy = false,
+		dependencies = {
+			{ "kyazdani42/nvim-web-devicons", lazy = false },
+			{ "Xuyuanp/nerdtree-git-plugin", lazy = false },
+			{ "ryanoasis/vim-devicons", lazy = false },
+		},
+		keys = {
+			{
+				map.CMD_t,
+				"<cmd>NERDTreeToggle<cr>",
+				desc = "Nerd Tree Toggle",
+			},
+			{
+				map.CMD_SHIFT_T,
+				"<cmd>NERDTreeFind<cr>",
+				desc = "Nerd Tree Find Current",
+			},
+		},
+	},
+}
+
+return M

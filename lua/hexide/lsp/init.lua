@@ -23,7 +23,7 @@ local lspServers = {
 	"yamlls", -- Yaml schema | Setup Schema
 	"lua_ls", -- lua
 	"jsonls", -- Json schema
-	-- "cssls"
+	"cssls",
 	"solargraph",
 	"prismals",
 }
@@ -32,6 +32,7 @@ local nonLspServers = {
 	"prettier",
 	"stylua",
 	"goimports",
+    "golangci-lint"
 	-- "rubocop",
 }
 
@@ -48,21 +49,21 @@ require("mason-lspconfig").setup({
 
 for _, server in pairs(lspServers) do
 	local opts = {
-		on_attach = require("hexide.nvim.lsp.handlers").on_attach,
-		capabilities = require("hexide.nvim.lsp.handlers").capabilities,
+		on_attach = require("hexide.lsp.handlers").on_attach,
+		capabilities = require("hexide.lsp.handlers").capabilities,
 	}
 
 	if server == "html" or server == "cssls" then
 		opts.capabilities.textDocument.completion.completionItem.snippetSupport = true
 	end
 
-	local has_custom_opts, server_custom_opts = pcall(require, "hexide.nvim.lsp.settings." .. server)
+	local has_custom_opts, server_custom_opts = pcall(require, "hexide.lsp.settings." .. server)
 	if has_custom_opts then
 		opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
 	end
 	require("lspconfig")[server].setup(opts)
 end
 
-require("hexide.nvim.lsp.handlers").setup()
-require("lspconfig").dartls.setup(require("hexide.nvim.lsp.settings.dartls"))
-require("hexide.nvim.lsp.flutter-tools")
+require("hexide.lsp.handlers").setup()
+require("lspconfig").dartls.setup(require("hexide.lsp.settings.dartls"))
+require("hexide.lsp.flutter-tools")

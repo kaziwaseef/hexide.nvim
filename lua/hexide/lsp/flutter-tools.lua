@@ -4,4 +4,4 @@ require("flutter-tools").setup({
 		enabled = true,
 	},
 })
-require("hexide.nvim.lsp.settings.flutter")
+require("hexide.lsp.settings.flutter")
