@@ -6,7 +6,7 @@ local telescopePlugins = require("hexide.pluginConfig.telescope")
 local treesitterPlugins = require("hexide.pluginConfig.treesitter")
 local gitPlugins = require("hexide.pluginConfig.git")
 local tabPlugins = require("hexide.pluginConfig.barbar")
-local nerdTreePlugins = require("hexide.pluginConfig.nerdTree")
+local neoTreePlugins = require("hexide.pluginConfig.neoTree")
 local lspConfigPlugins = require("hexide.pluginConfig.lspConfig")
 
 -- require("hexide.pluginConfig.motion")
@@ -44,7 +44,7 @@ local internalPlugins = tableUtils.spreadTables(
 	airLinePlugins,
 	telescopePlugins,
 	completionPlugins,
-	nerdTreePlugins,
+	neoTreePlugins,
 	gitPlugins
 )
 

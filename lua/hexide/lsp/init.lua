@@ -32,7 +32,7 @@ local nonLspServers = {
 	"prettier",
 	"stylua",
 	"goimports",
-    "golangci-lint"
+	"golangci-lint",
 	-- "rubocop",
 }
 
