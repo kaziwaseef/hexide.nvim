@@ -26,6 +26,7 @@ local M = {
 			{ map.CMD_7, "<cmd>BufferGoto 7<cr>", desc = "Buffer/Tab 7" },
 			{ map.CMD_8, "<cmd>BufferGoto 8<cr>", desc = "Buffer/Tab 8" },
 			{ map.CMD_9, "<cmd>BufferLast<cr>", desc = "Buffer/Tab Last" },
+			{ "<leader>cb", "<cmd>%bd|e#<cr>", desc = "Buffer/Tab Close All Except Current" },
 		},
 	},
 }

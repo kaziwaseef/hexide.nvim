@@ -56,9 +56,6 @@ keymap("n", "<leader>h", ":noh<CR>", opts)
 keymap("v", ">", ">gv", opts)
 keymap("v", "<", "<gv", opts)
 
--- Close All Buffers except current
-keymap("n", "<leader>cb", "<cmd>%bd|e#<cr>", opts)
-
 vim.cmd([[
     fun! SetupCommandAlias(from, to)
         exec 'cnoreabbrev <expr> '.a:from
