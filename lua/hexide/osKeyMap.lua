@@ -33,8 +33,8 @@ local mac_map = {
 	CMD_p = "<C-p>",
 	CMD_SHIFT_P = "++",
 	CMD_f = "+-",
-	CMD_t = "†",
-	CMD_SHIFT_T = "<C-t>",
+	CMD_SHIFT_T = "†",
+	CMD_t = "<C-t>",
 }
 
 local regular_map = {
@@ -70,8 +70,8 @@ local regular_map = {
 	CMD_p = "<C-p>",
 	CMD_SHIFT_P = "++",
 	CMD_f = "+-",
-	CMD_t = "†",
-	CMD_SHIFT_T = "<C-T>",
+	CMD_SHIFT_T = "†",
+	CMD_t = "<C-t>",
 }
 
 -- override = 'mac' or 'regular'

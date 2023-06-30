@@ -1,6 +1,6 @@
-# config-files
+# Hex-IDE with neovim (tmux and alacritty)
 
-Config files for my environment
+This is a full ide experience. This is not a neovim plugin.
 
 # Tmux Setup
 
@@ -55,6 +55,13 @@ ln -s $(pwd)/alacritty.yml ${HOME}/.config/alacritty/alacritty.yml
 
 # Neo Vim Setup
 
+### Prerequisites
+
+Install: 
+- Node
+- ripgrep
+- gnu-sed
+
 ## Install NeoVim
 
 ```bash
@@ -74,15 +81,5 @@ ln -s $(pwd)/lazygit.config.yaml ${HOME}/.config/nvim/lazygit.config.yaml
 ## Install Plugins
 
 ```
-Goto the plugin.lua file and save it to auto install all plugins
-```
-
-### Prerequisites
-
-Install Node, ripgrep
-
-For ripgrep
-
-```bash
-brew install ripgrep
+Open neovim to get plugins. Or run :Lazy command
 ```

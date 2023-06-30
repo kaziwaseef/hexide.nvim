@@ -10,7 +10,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Alacritty Map
-local map = require("rawnvim.osKeyMap").mapping
+local map = require("hexide.osKeyMap").mapping
 
 vim.cmd([[
 vnoremap <expr> j v:count ? 'j' : 'gj'
