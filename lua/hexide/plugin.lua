@@ -29,6 +29,9 @@ local commonPlugins = {
 	},
 	{
 		"iamcco/markdown-preview.nvim",
+		keys = {
+			{ "<leader>md", "<cmd>MarkdownPreview<cr>", desc = "Markdown Preview" },
+		},
 		build = function()
 			vim.fn["mkdp#util#install"]()
 		end,
