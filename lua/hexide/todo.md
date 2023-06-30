@@ -9,4 +9,4 @@
 - [x] Setup CMD_k doc scrolling
 - [x] Setup Find and Replace
 - [x] Fix Prettier
-- [ ] Create Local configs that will not be comitted to git
+- [x] Create Local configs that will not be comitted to git

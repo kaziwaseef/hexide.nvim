@@ -8,14 +8,14 @@ local gitPlugins = require("hexide.pluginConfig.git")
 local tabPlugins = require("hexide.pluginConfig.barbar")
 local neoTreePlugins = require("hexide.pluginConfig.neoTree")
 local lspConfigPlugins = require("hexide.pluginConfig.lspConfig")
-
--- require("hexide.pluginConfig.motion")
--- require("hexide.pluginConfig.spectre")
--- require("hexide.pluginConfig.fidget")
+local legendaryPlugins = require("hexide.pluginConfig.legendaryPlugins")
+local motionPlugins = require("hexide.pluginConfig.motion")
+local searchPlugins = require("hexide.pluginConfig.search")
 
 local commonPlugins = {
 	"nvim-lua/popup.nvim",
 	"nvim-lua/plenary.nvim",
+	"vim-scripts/ReplaceWithRegister",
 }
 
 local colorSchemes = {
@@ -37,6 +37,7 @@ local airLinePlugins = {
 
 local internalPlugins = tableUtils.spreadTables(
 	commonPlugins,
+	legendaryPlugins,
 	colorSchemes,
 	tabPlugins,
 	treesitterPlugins,
@@ -45,15 +46,17 @@ local internalPlugins = tableUtils.spreadTables(
 	telescopePlugins,
 	completionPlugins,
 	neoTreePlugins,
-	gitPlugins
+	gitPlugins,
+	motionPlugins,
+	searchPlugins
 )
 
 local plugins = internalPlugins
 
-local hasCustomOpts, userCustomOpts = pcall(require, "hexide.lsp.settings." .. "xxx")
+local hasCustomOpts, userCustomOpts = pcall(require, "hexide.userConfig")
 
 if hasCustomOpts then
-	plugins = vim.tbl_deep_extend("force", plugins, userCustomOpts.plugins)
+	plugins = tableUtils.spreadTables(plugins, userCustomOpts.plugins)
 end
 
 local opts = {}

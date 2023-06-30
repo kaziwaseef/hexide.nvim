@@ -1,9 +1,12 @@
+local map = require("hexide.osKeyMap").mapping
+
 local M = {
 	"williamboman/mason.nvim",
 	"WhoIsSethDaniel/mason-tool-installer.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
 	"akinsho/flutter-tools.nvim",
+	"j-hui/fidget.nvim",
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		config = function()

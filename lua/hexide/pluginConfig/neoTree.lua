@@ -8,7 +8,7 @@ local M = {
 		keys = {
 			{
 				map.CMD_t,
-				"<cmd>Neotree toggle=true source=filesystem reveal=true position=right<cr>",
+				"<cmd>Neotree source=filesystem reveal=true position=right<cr>",
 				desc = "Neo Tree File Browser",
 			},
 		},
@@ -20,6 +20,20 @@ local M = {
 		config = function()
 			require("neo-tree").setup({
 				close_if_last_window = true,
+				window = {
+					position = "right",
+				},
+				filesystem = {
+					filtered_items = {
+						hide_dotfiles = false,
+						hide_gitignored = false,
+						hide_by_name = {
+							".git",
+							".DS_Store",
+							"thumbs.db",
+						},
+					},
+				},
 				default_component_configs = {
 					git_status = {
 						symbols = {
