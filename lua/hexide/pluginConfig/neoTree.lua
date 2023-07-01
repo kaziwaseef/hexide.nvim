@@ -24,6 +24,7 @@ local M = {
 					position = "right",
 				},
 				filesystem = {
+					use_libuv_file_watcher = true,
 					filtered_items = {
 						hide_dotfiles = false,
 						hide_gitignored = false,

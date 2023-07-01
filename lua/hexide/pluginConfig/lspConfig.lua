@@ -6,7 +6,7 @@ local M = {
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
 	"akinsho/flutter-tools.nvim",
-	"j-hui/fidget.nvim",
+	{ "j-hui/fidget.nvim", lazy = false },
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		config = function()

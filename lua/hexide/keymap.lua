@@ -19,7 +19,6 @@ nnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 ]])
 
-keymap("n", "<leader>ru", ":! python3 ~/Documents/runner.py &<CR>", opts)
 -- Copy to OS Clipboard
 keymap("v", map.CMD_c, '"*y', opts)
 -- Keep cursor in the same place for yank
@@ -27,14 +26,14 @@ keymap("v", "y", "ygv<Esc>", opts)
 
 -- Select all
 keymap("n", map.CMD_a, "ggVG", opts)
-keymap("v", map.CMD_a, "<Esc>ggVG", opts)
+keymap("v", map.CMD_a, "<esc>ggVG", opts)
 
 -- Write Buffer
-keymap("n", "<leader>s", ":w<CR>", opts)
+keymap("n", "<leader>s", "<cmd>w<cr>", opts)
 
 -- Move Lines
-keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
-keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
+keymap("v", "J", "<cmd>m '>+1<cr>gv=gv", opts)
+keymap("v", "K", "<cmd>m '<-2<cr>gv=gv", opts)
 
 -- Splits
 -- Movement
@@ -47,20 +46,14 @@ keymap("n", map.CMD_SHIFT_V, "<C-w><C-v>", opts)
 keymap("n", map.CMD_SHIFT_S, "<C-w><C-s>", opts)
 
 -- Reload File
-keymap("n", "<leader>ee", "<cmd>e %<CR>", opts)
+keymap("n", "<leader>ee", "<cmd>e %<cr>", opts)
 
 -- Toggle Highlight
-keymap("n", "<leader>h", ":noh<CR>", opts)
+keymap("n", "<leader>h", "<cmd>noh<cr>", opts)
 
 -- Indent Selected Lines
 keymap("v", ">", ">gv", opts)
 keymap("v", "<", "<gv", opts)
 
-vim.cmd([[
-    fun! SetupCommandAlias(from, to)
-        exec 'cnoreabbrev <expr> '.a:from
-            \ .' ((getcmdtype() is# ":" && getcmdline() is# "'.a:from.'")'
-            \ .'? ("'.a:to.'") : ("'.a:from.'"))'
-    endfun
-    call SetupCommandAlias("git","Git")
-]])
+-- Close Quickfix Window
+keymap("n", "<leader>cc", "<cmd>cclose<cr>", opts)
