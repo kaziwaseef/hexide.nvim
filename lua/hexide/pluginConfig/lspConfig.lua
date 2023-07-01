@@ -27,6 +27,21 @@ local M = {
 			})
 		end,
 	},
+	{
+		"kosayoda/nvim-lightbulb",
+		event = "CursorHold",
+		config = function()
+			require("nvim-lightbulb").setup({
+				sign = {
+					enabled = true,
+					priority = 10000,
+				},
+				autocmd = {
+					enabled = true,
+				},
+			})
+		end,
+	},
 }
 
 return M
