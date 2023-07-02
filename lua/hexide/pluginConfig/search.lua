@@ -8,10 +8,10 @@ local M = {
 			require("spectre").setup()
 		end,
 		keys = {
-			{ map.CMD_f, '<cmd>lua require("spectre").open()<CR>' },
-			{ "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>' },
-			{ "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>' },
-			{ "<leader>sw", '<esc><cmd>lua require("spectre").open_visual()<CR>', mode = "v" },
+			{ map.CMD_f, '<cmd>lua require("spectre").toggle()<CR>', desc = "Open Global Search" },
+			-- { "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>' },
+			-- { "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>' },
+			-- { "<leader>sw", '<esc><cmd>lua require("spectre").open_visual()<CR>', mode = "v" },
 		},
 	},
 }
