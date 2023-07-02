@@ -36,6 +36,13 @@ local commonPlugins = {
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
+	{
+		"petertriho/nvim-scrollbar",
+		lazy = false,
+		config = function()
+			require("scrollbar").setup()
+		end,
+	},
 }
 
 local colorSchemes = {
