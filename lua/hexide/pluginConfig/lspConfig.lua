@@ -29,7 +29,7 @@ local M = {
 	},
 	{
 		"kosayoda/nvim-lightbulb",
-		event = "CursorHold",
+		event = "BufEnter",
 		config = function()
 			require("nvim-lightbulb").setup({
 				sign = {
