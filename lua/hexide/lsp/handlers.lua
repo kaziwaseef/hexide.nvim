@@ -60,6 +60,7 @@ local autoFormatFiles = {
 	"*.dart",
 	"*.vue",
 	"*.go",
+	"*.py",
 	-- "*.prisma",
 }
 vim.cmd(string.format(

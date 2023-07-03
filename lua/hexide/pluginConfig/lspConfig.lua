@@ -23,6 +23,8 @@ local M = {
 					require("null-ls").builtins.formatting.prettier,
 					require("null-ls").builtins.formatting.goimports,
 					require("null-ls").builtins.diagnostics.golangci_lint,
+					require("null-ls").builtins.formatting.autopep8,
+					require("null-ls").builtins.diagnostics.mypy,
 				},
 			})
 		end,

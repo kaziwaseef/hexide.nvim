@@ -15,17 +15,16 @@ local lspServers = {
 	"graphql", -- Graphql
 	"gopls", -- Go
 	"html", -- HTML
-	-- "rust_analyzer", -- Rust
 	"tailwindcss", -- Tailwind Css Library
-	-- "terraformls", -- Terraform (Public API)
 	"tsserver", -- Typescript and Javascript
 	"volar", -- Vue 3
 	"yamlls", -- Yaml schema | Setup Schema
 	"lua_ls", -- lua
 	"jsonls", -- Json schema
-	"cssls",
-	"solargraph",
-	"prismals",
+	"cssls", -- Css
+	"solargraph", -- Ruby
+	"prismals", -- Prisma
+	"pylsp", -- Python
 }
 
 local nonLspServers = {
@@ -33,6 +32,8 @@ local nonLspServers = {
 	"stylua",
 	"goimports",
 	"golangci-lint",
+	"autopep8", -- Yet another python formatter
+	"mypy", -- Python linter for types
 	-- "rubocop",
 }
 
