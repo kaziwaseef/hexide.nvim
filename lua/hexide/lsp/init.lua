@@ -66,5 +66,4 @@ for _, server in pairs(lspServers) do
 end
 
 require("hexide.lsp.handlers").setup()
-require("lspconfig").dartls.setup(require("hexide.lsp.settings.dartls"))
 require("hexide.lsp.flutter-tools")
