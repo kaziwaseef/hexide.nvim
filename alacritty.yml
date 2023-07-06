@@ -68,25 +68,25 @@ key_bindings:
   - { key: Key8,           mods: Command,       chars: "•"          } # <Cmd-8> => <Opt-8> 
   - { key: Key9,           mods: Command,       chars: "ª"          } # <Cmd-9> => <Opt-9> 
 
-  - { key: Key1,           mods: Control,       chars: "¡"          } # <Cmd-1> => <Opt-1> 
-  - { key: Key2,           mods: Control,       chars: "™"          } # <Cmd-2> => <Opt-2> 
-  - { key: Key3,           mods: Control,       chars: "£"          } # <Cmd-3> => <Opt-3> 
-  - { key: Key4,           mods: Control,       chars: "¢"          } # <Cmd-4> => <Opt-4> 
-  - { key: Key5,           mods: Control,       chars: "∞"          } # <Cmd-5> => <Opt-5> 
-  - { key: Key6,           mods: Control,       chars: "§"          } # <Cmd-6> => <Opt-6> 
-  - { key: Key7,           mods: Control,       chars: "¶"          } # <Cmd-7> => <Opt-7> 
-  - { key: Key8,           mods: Control,       chars: "•"          } # <Cmd-8> => <Opt-8> 
-  - { key: Key9,           mods: Control,       chars: "ª"          } # <Cmd-9> => <Opt-9> 
+  - { key: Key1,           mods: Control,       chars: "¡"          } # <Ctrl-1> => <Opt-1> 
+  - { key: Key2,           mods: Control,       chars: "™"          } # <Ctrl-2> => <Opt-2> 
+  - { key: Key3,           mods: Control,       chars: "£"          } # <Ctrl-3> => <Opt-3> 
+  - { key: Key4,           mods: Control,       chars: "¢"          } # <Ctrl-4> => <Opt-4> 
+  - { key: Key5,           mods: Control,       chars: "∞"          } # <Ctrl-5> => <Opt-5> 
+  - { key: Key6,           mods: Control,       chars: "§"          } # <Ctrl-6> => <Opt-6> 
+  - { key: Key7,           mods: Control,       chars: "¶"          } # <Ctrl-7> => <Opt-7> 
+  - { key: Key8,           mods: Control,       chars: "•"          } # <Ctrl-8> => <Opt-8> 
+  - { key: Key9,           mods: Control,       chars: "ª"          } # <Ctrl-9> => <Opt-9> 
 
-  - { key: Period,         mods: Command,       chars: "≥"          } # <Cmd-,> => <Opt->> 
-  - { key: Period,         mods: Command|Shift, chars: "˘"          } # <Cmd-,> => <Opt->> 
-  - { key: Period,         mods: Control,       chars: "≥"          } # <Cmd-,> => <Opt->> 
-  - { key: Period,         mods: Control|Shift, chars: "˘"          } # <Cmd-,> => <Opt->> 
+  - { key: Period,         mods: Command,       chars: "≥"          } # <Cmd-.> => <Opt->> 
+  - { key: Period,         mods: Command|Shift, chars: "˘"          } # <Cmd-.> => <Opt->> 
+  - { key: Period,         mods: Control,       chars: "≥"          } # <Cmd-.> => <Opt->> 
+  - { key: Period,         mods: Control|Shift, chars: "˘"          } # <Cmd-.> => <Opt->> 
 
-  - { key: Comma,          mods: Command,       chars: "≤"          } # <Cmd-.> => <Opt-<> 
-  - { key: Comma,          mods: Command|Shift, chars: "¯"          } # <Cmd-.> => <Opt-<> 
-  - { key: Comma,          mods: Control,       chars: "≤"          } # <Cmd-.> => <Opt-<> 
-  - { key: Comma,          mods: Control|Shift, chars: "¯"          } # <Cmd-.> => <Opt-<> 
+  - { key: Comma,          mods: Command,       chars: "≤"          } # <Cmd-,> => <Opt-<> 
+  - { key: Comma,          mods: Command|Shift, chars: "¯"          } # <Cmd-,> => <Opt-<> 
+  - { key: Comma,          mods: Control,       chars: "≤"          } # <Cmd-,> => <Opt-<> 
+  - { key: Comma,          mods: Control|Shift, chars: "¯"          } # <Cmd-,> => <Opt-<> 
 
   - { key: J,              mods: Command,       chars: "\x0A"       } # <Cmd-J> => <Ctrl-J> 
   - { key: K,              mods: Command,       chars: "\x0B"       } # <Cmd-K> => <Ctrl-K> 
