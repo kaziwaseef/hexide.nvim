@@ -34,6 +34,7 @@ local nonLspServers = {
 	"golangci-lint",
 	"autopep8", -- Yet another python formatter
 	"mypy", -- Python linter for types
+	"cspell",
 	-- "rubocop",
 }
 
