@@ -27,8 +27,8 @@ function M.setup()
 			style = "minimal",
 			border = "rounded",
 			source = "always",
-			header = "",
-			prefix = "",
+			-- header = "",
+			-- prefix = "",
 		},
 	}
 
@@ -43,32 +43,6 @@ function M.setup()
 	})
 end
 
-vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
-
-local autoFormatFiles = {
-	"*.js",
-	"*.jsx",
-	"*.mjs",
-	"*.ts",
-	"*.tsx",
-	"*.css",
-	"*.less",
-	"*.scss",
-	"*.json",
-	"*.graphql",
-	"*.lua",
-	"*.dart",
-	"*.vue",
-	"*.go",
-	"*.py",
-	-- "*.prisma",
-}
-vim.cmd(string.format(
-	[[
-            autocmd BufWritePre %s Format
-        ]],
-	table.concat(autoFormatFiles, ",")
-))
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	local keymap = vim.api.nvim_buf_set_keymap
@@ -76,22 +50,19 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+	-- keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	-- keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 	keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
 	keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>', opts)
 	keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-
-	-- vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting_sync()' ]])
-	keymap(bufnr, "n", "<leader>fm", ":Format<CR>", opts)
 end
-
+---@diagnostic disable-next-line: unused-local
 function M.on_attach(client, bufnr)
-	if client.name ~= "null-ls" and client.name ~= "prismals" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
+	-- if client.name ~= "null-ls" and client.name ~= "prismals" then
+	-- 	client.server_capabilities.documentFormattingProvider = false
+	-- end
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 	vim.api.nvim_buf_set_option(bufnr, "tagfunc", "v:lua.vim.lsp.tagfunc")
 	lsp_keymaps(bufnr)

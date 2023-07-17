@@ -14,6 +14,7 @@ local lspServers = {
 	"dockerls", -- Docker
 	"graphql", -- Graphql
 	"gopls", -- Go
+	"golangci_lint_ls", -- Go Lint
 	"html", -- HTML
 	"tailwindcss", -- Tailwind Css Library
 	"tsserver", -- Typescript and Javascript
@@ -27,16 +28,21 @@ local lspServers = {
 	"pylsp", -- Python
 }
 
-local nonLspServers = {
+local formattingServers = {
 	"prettier",
 	"stylua",
 	"goimports",
-	"golangci-lint",
 	"autopep8", -- Yet another python formatter
-	"mypy", -- Python linter for types
-	"cspell",
 	-- "rubocop",
 }
+local diagonosticServer = {
+	"golangci-lint", -- needed for golangci_lint_ls
+	"mypy", -- Python linter for types
+	-- "cspell",
+}
+local tableUtils = require("hexide.utils.table")
+
+local nonLspServers = tableUtils.spreadTables(formattingServers, diagonosticServer)
 
 require("mason-tool-installer").setup({
 	ensure_installed = nonLspServers,
