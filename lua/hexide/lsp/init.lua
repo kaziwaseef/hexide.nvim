@@ -23,21 +23,21 @@ local lspServers = {
 	"lua_ls", -- lua
 	"jsonls", -- Json schema
 	"cssls", -- Css
-	"solargraph", -- Ruby
+	-- "solargraph", -- Ruby
 	"prismals", -- Prisma
-	"pylsp", -- Python
+	-- "pylsp", -- Python
 }
 
 local formattingServers = {
 	"prettier",
 	"stylua",
 	"goimports",
-	"autopep8", -- Yet another python formatter
+	-- "autopep8", -- Yet another python formatter
 	-- "rubocop",
 }
 local diagonosticServer = {
 	"golangci-lint", -- needed for golangci_lint_ls
-	"mypy", -- Python linter for types
+	-- "mypy", -- Python linter for types
 	-- "cspell",
 }
 local tableUtils = require("hexide.utils.table")
