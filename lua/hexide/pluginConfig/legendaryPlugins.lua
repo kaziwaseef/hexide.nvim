@@ -9,7 +9,9 @@ local M = {
 		keys = { { map.CMD_SHIFT_T, "<cmd>Legendary<cr>", desc = "Open Command Palette" } },
 		config = function()
 			require("legendary").setup({
-				lazy_nvim = { auto_register = true },
+				extensions = {
+					lazy_nvim = true,
+				},
 			})
 		end,
 	},
