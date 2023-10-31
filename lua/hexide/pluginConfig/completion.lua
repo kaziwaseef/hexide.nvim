@@ -53,7 +53,7 @@ local M = {
 				Event = "",
 				Operator = "",
 				TypeParameter = "",
-				Copilot = "ﯟ",
+				Copilot = "",
 			}
 
 			local map = require("hexide.osKeyMap").mapping
