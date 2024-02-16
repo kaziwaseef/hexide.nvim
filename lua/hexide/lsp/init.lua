@@ -26,6 +26,7 @@ local lspServers = {
 	-- "solargraph", -- Ruby
 	"prismals", -- Prisma
 	-- "pylsp", -- Python
+	"astro",
 }
 
 local formattingServers = {

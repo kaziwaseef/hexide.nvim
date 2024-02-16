@@ -42,6 +42,7 @@ local M = {
 					typescriptreact = { require("formatter.defaults.prettier") },
 					graphql = { require("formatter.defaults.prettier") },
 					python = { require("formatter.filetypes.python").autopep8 },
+					astro = { require("formatter.defaults.prettier") },
 					["*"] = { require("formatter.filetypes.any").remove_trailing_whitespace },
 				},
 			})
@@ -61,6 +62,7 @@ local M = {
 				"*.vue",
 				"*.go",
 				"*.py",
+				"*.astro",
 				-- "*.prisma",
 			}
 			local afgroup = vim.api.nvim_create_augroup("AutoFormatting", {})

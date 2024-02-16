@@ -39,6 +39,7 @@ local M = {
 					"sql",
 					"svelte",
 					"vue",
+					"astro",
 				},
 				sync_install = false,
 				highlight = {
