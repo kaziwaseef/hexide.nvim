@@ -27,6 +27,11 @@ local M = {
 				"<cmd>lua require'telescope.builtin'.diagnostics()<cr>",
 				desc = "Open Diagonostics",
 			},
+			{
+				"<leader>gr",
+				"<cmd>Telescope lsp_references<cr>",
+				desc = "Open Diagonostics",
+			},
 		},
 		config = function()
 			local status_ok, telescope = pcall(require, "telescope")

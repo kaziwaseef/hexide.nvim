@@ -43,6 +43,7 @@ local M = {
 					graphql = { require("formatter.defaults.prettier") },
 					python = { require("formatter.filetypes.python").autopep8 },
 					astro = { require("formatter.defaults.prettier") },
+					json = { require("formatter.defaults.prettier") },
 					["*"] = { require("formatter.filetypes.any").remove_trailing_whitespace },
 				},
 			})
@@ -63,7 +64,7 @@ local M = {
 				"*.go",
 				"*.py",
 				"*.astro",
-				-- "*.prisma",
+				"*.json",
 			}
 			local afgroup = vim.api.nvim_create_augroup("AutoFormatting", {})
 			vim.api.nvim_create_autocmd("BufWritePost", {
