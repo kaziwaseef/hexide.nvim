@@ -40,6 +40,7 @@ local M = {
 					"svelte",
 					"vue",
 					"astro",
+					"terraform",
 				},
 				sync_install = false,
 				highlight = {

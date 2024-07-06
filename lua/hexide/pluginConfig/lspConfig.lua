@@ -44,6 +44,8 @@ local M = {
 					python = { require("formatter.filetypes.python").autopep8 },
 					astro = { require("formatter.defaults.prettier") },
 					json = { require("formatter.defaults.prettier") },
+					html = { require("formatter.defaults.prettier") },
+					terraform = { require("formatter.filetypes.terraform") },
 					["*"] = { require("formatter.filetypes.any").remove_trailing_whitespace },
 				},
 			})
@@ -65,6 +67,9 @@ local M = {
 				"*.py",
 				"*.astro",
 				"*.json",
+				"*.html",
+				"*.yaml",
+				"*.tf",
 			}
 			local afgroup = vim.api.nvim_create_augroup("AutoFormatting", {})
 			vim.api.nvim_create_autocmd("BufWritePost", {

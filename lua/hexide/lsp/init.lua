@@ -27,6 +27,7 @@ local lspServers = {
 	"prismals", -- Prisma
 	-- "pylsp", -- Python
 	"astro",
+	"terraformls",
 }
 
 local formattingServers = {
