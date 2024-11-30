@@ -83,3 +83,9 @@ ln -s $(pwd)/lazygit.config.yaml ${HOME}/.config/nvim/lazygit.config.yaml
 ```
 Open neovim to get plugins. Or run :Lazy command
 ```
+
+# Aerospace setup
+
+```bash
+ln -s $(pwd)/aerospace.toml ${HOME}/.aerospace.toml
+```
