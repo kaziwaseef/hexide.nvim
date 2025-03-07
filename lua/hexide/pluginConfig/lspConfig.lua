@@ -46,6 +46,7 @@ local M = {
 					json = { require("formatter.defaults.prettier") },
 					html = { require("formatter.defaults.prettier") },
 					terraform = { require("formatter.filetypes.terraform") },
+					rust = { require("formatter.filetypes.rust").rustfmt },
 					["*"] = { require("formatter.filetypes.any").remove_trailing_whitespace },
 				},
 			})
@@ -70,6 +71,7 @@ local M = {
 				"*.html",
 				"*.yaml",
 				"*.tf",
+				"*.rs",
 			}
 			local afgroup = vim.api.nvim_create_augroup("AutoFormatting", {})
 			vim.api.nvim_create_autocmd("BufWritePost", {

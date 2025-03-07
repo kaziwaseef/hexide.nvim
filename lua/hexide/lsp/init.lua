@@ -28,6 +28,7 @@ local lspServers = {
 	-- "pylsp", -- Python
 	"astro",
 	"terraformls",
+	"rust_analyzer",
 }
 
 local formattingServers = {
