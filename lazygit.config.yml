@@ -185,7 +185,7 @@ keybinding:
         renameCommitWithEditor: R
         viewResetOptions: g
         markCommitAsFixup: f
-        createFixupCommit: F
+        createFixupCommit: ""
         squashAboveCommits: S
         moveDownCommit: <c-j>
         moveUpCommit: <c-k>
@@ -221,7 +221,11 @@ os:
     openCommand: open -- {{filename}}
     openLinkCommand: open {{link}}
 disableStartupPopups: false
-customCommands: []
+customCommands:
+  - key: "F"
+    description: "fixup commit --no-verify"
+    command: "git commit --fixup={{.SelectedLocalCommit.Sha}} --no-verify"
+    context: "commits"
 services: {}
 notARepository: prompt
 promptToReturnFromSubprocess: true
