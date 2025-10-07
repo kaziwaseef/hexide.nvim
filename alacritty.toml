@@ -1,0 +1,287 @@
+[[keyboard.bindings]]
+chars = "\u0002"
+key = "B"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\t"
+key = "I"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u000F"
+key = "O"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0014"
+key = "T"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "†"
+key = "T"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0003"
+key = "C"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0010"
+key = "P"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "++"
+key = "P"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "+-"
+key = "F"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "+f"
+key = "F"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0001"
+key = "A"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "¡"
+key = "Key1"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "™"
+key = "Key2"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "£"
+key = "Key3"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "¢"
+key = "Key4"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "∞"
+key = "Key5"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "§"
+key = "Key6"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "¶"
+key = "Key7"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "•"
+key = "Key8"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "ª"
+key = "Key9"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "¡"
+key = "Key1"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "™"
+key = "Key2"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "£"
+key = "Key3"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "¢"
+key = "Key4"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "∞"
+key = "Key5"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "§"
+key = "Key6"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "¶"
+key = "Key7"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "•"
+key = "Key8"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "ª"
+key = "Key9"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "≥"
+key = "Period"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "˘"
+key = "Period"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "≥"
+key = "Period"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "˘"
+key = "Period"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "≤"
+key = "Comma"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "¯"
+key = "Comma"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "≤"
+key = "Comma"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "¯"
+key = "Comma"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = """
+
+"""
+key = "J"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u000B"
+key = "K"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "L"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\b"
+key = "H"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "√"
+key = "V"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "√"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "ß"
+key = "S"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "ß"
+key = "S"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0015"
+key = "U"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0004"
+key = "D"
+mods = "Command"
+
+[terminal]
+
+[colors.bright]
+black = "#686868"
+blue = "#59C2FF"
+cyan = "#95E6CB"
+green = "#C2D94C"
+magenta = "#FFEE99"
+red = "#F07178"
+white = "#FFFFFF"
+yellow = "#FFB454"
+
+[colors.normal]
+black = "#01060E"
+blue = "#53BDFA"
+cyan = "#90E1C6"
+green = "#91B362"
+magenta = "#FAE994"
+red = "#EA6C73"
+white = "#C7C7C7"
+yellow = "#F9AF4F"
+
+[colors.primary]
+background = "#0A0E14"
+foreground = "#B3B1AD"
+
+[cursor.style]
+blinking = "On"
+shape = "Beam"
+
+[font]
+size = 14
+
+[font.bold]
+family = "Hurmit Nerd Font Mono"
+style = "bold"
+
+[font.normal]
+family = "Hurmit Nerd Font Mono"
+style = "medium"
+
+[terminal.shell]
+args = ["-l", "-c", "tmux attach || tmux"]
+program = "/bin/zsh"
+
+[window]
+decorations = "none"
+startup_mode = "Maximized"
+
+[keyboard]
