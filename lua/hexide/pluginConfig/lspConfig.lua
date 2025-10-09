@@ -1,7 +1,7 @@
 local M = {
-	"williamboman/mason.nvim",
-	"WhoIsSethDaniel/mason-tool-installer.nvim",
-	"williamboman/mason-lspconfig.nvim",
+	-- "williamboman/mason.nvim",
+	-- "WhoIsSethDaniel/mason-tool-installer.nvim",
+	-- "williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
 	"akinsho/flutter-tools.nvim",
 	{

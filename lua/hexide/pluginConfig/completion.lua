@@ -11,7 +11,6 @@ local M = {
 			"hrsh7th/cmp-nvim-lua",
 			"L3MON4D3/LuaSnip", --snippet engine
 			"rafamadriz/friendly-snippets", -- a bunch of snippets to use
-			"zbirenbaum/copilot-cmp", -- copilot completions
 		},
 		config = function()
 			local cmp_status_ok, cmp = pcall(require, "cmp")
@@ -53,7 +52,6 @@ local M = {
 				Event = "",
 				Operator = "",
 				TypeParameter = "",
-				Copilot = "",
 			}
 
 			local map = require("hexide.osKeyMap").mapping
@@ -94,7 +92,6 @@ local M = {
 
 						vim_item.menu = ({
 							path = "[Path]",
-							copilot = "[Copilot]",
 							buffer = "[Buffer]",
 							nvim_lsp = "[LSP]",
 							nvim_lua = "[NVIM_LUA]",
@@ -105,7 +102,6 @@ local M = {
 				},
 				sources = {
 					{ name = "path" },
-					{ name = "copilot" },
 					{
 						name = "nvim_lsp",
 						entry_filter = function(entry)
