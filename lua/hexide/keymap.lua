@@ -23,6 +23,8 @@ nnoremap <expr> k v:count ? 'k' : 'gk'
 keymap("v", map.CMD_c, '"*y', opts)
 -- Keep cursor in the same place for yank
 keymap("v", "y", "ygv<Esc>", opts)
+-- Copy from yank buffer to OS Clipboard
+keymap("n", "Y", "", opts)
 
 -- Select all
 keymap("n", map.CMD_a, "ggVG", opts)

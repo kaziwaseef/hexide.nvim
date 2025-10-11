@@ -38,46 +38,6 @@ local commonPlugins = {
 			require("scrollbar").setup()
 		end,
 	},
-	{
-		"ThePrimeagen/harpoon",
-		branch = "harpoon2",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			local harpoon = require("harpoon")
-
-			harpoon:setup()
-
-			local map = require("hexide.osKeyMap").mapping
-
-			vim.keymap.set("n", "<leader>a", function()
-				harpoon:list():add()
-			end)
-			vim.keymap.set("n", "<leader>au", function()
-				harpoon.ui:toggle_quick_menu(harpoon:list())
-			end)
-
-			vim.keymap.set("n", map.CMD_1, function()
-				harpoon:list():select(1)
-			end)
-			vim.keymap.set("n", map.CMD_2, function()
-				harpoon:list():select(2)
-			end)
-			vim.keymap.set("n", map.CMD_3, function()
-				harpoon:list():select(3)
-			end)
-			vim.keymap.set("n", map.CMD_4, function()
-				harpoon:list():select(4)
-			end)
-
-			-- Toggle previous & next buffers stored within Harpoon list
-			vim.keymap.set("n", map.CMD_comma, function()
-				harpoon:list():prev()
-			end)
-			vim.keymap.set("n", map.CMD_period, function()
-				harpoon:list():next()
-			end)
-		end,
-	},
 }
 
 local colorSchemes = {
@@ -107,7 +67,6 @@ local internalPlugins = tableUtils.spreadTables(
 	commonPlugins,
 	legendaryPlugins,
 	colorSchemes,
-	-- tabPlugins,
 	treesitterPlugins,
 	lspConfigPlugins,
 	airLinePlugins,
