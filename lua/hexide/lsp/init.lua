@@ -69,19 +69,3 @@ for _, server in pairs(lspServers) do
 end
 
 require("hexide.lsp.handlers").setup()
-
-vim.api.nvim_create_autocmd("VimEnter", {
-	pattern = "*",
-	callback = function()
-		if vim.g.use_flutter_tools then
-			require("hexide.lsp.flutter-tools")
-		else
-			local opts = {
-				on_attach = require("hexide.lsp.handlers").on_attach,
-				capabilities = require("hexide.lsp.handlers").capabilities,
-			}
-			vim.lsp.config("dartls", opts)
-			vim.lsp.enable("dartls")
-		end
-	end,
-})

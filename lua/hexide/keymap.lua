@@ -57,12 +57,3 @@ keymap("v", "<", "<gv", opts)
 
 -- Close Quickfix Window
 keymap("n", "<leader>cc", "<cmd>cclose<cr>", opts)
-
-vim.api.nvim_create_autocmd("TextYankPost", {
-	callback = function()
-		local yanked = vim.fn.getreg('"')
-		local type = vim.fn.getregtype('"')
-		vim.fn.setreg("+", yanked, type)
-	end,
-	desc = "Copy yanked text to system clipboard (+)",
-})

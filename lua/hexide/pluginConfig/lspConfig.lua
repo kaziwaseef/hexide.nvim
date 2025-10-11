@@ -73,14 +73,7 @@ local M = {
 				"*.tf",
 				"*.rs",
 			}
-			local afgroup = vim.api.nvim_create_augroup("AutoFormatting", {})
-			vim.api.nvim_create_autocmd("BufWritePost", {
-				pattern = table.concat(autoFormatFiles, ","),
-				group = afgroup,
-				callback = function()
-					vim.cmd("FormatWrite")
-				end,
-			})
+			require("hexide.autocommands").create_autoformat_autocmd(autoFormatFiles)
 		end,
 	},
 	-- {
