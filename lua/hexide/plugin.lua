@@ -11,6 +11,8 @@ local legendaryPlugins = require("hexide.pluginConfig.legendaryPlugins")
 local motionPlugins = require("hexide.pluginConfig.motion")
 local searchPlugins = require("hexide.pluginConfig.search")
 
+local map = require("hexide.osKeyMap").mapping
+
 local commonPlugins = {
 	"nvim-lua/popup.nvim",
 	"nvim-lua/plenary.nvim",
@@ -43,6 +45,33 @@ local commonPlugins = {
 		dependencies = {
 			{ "nvim-tree/nvim-web-devicons", lazy = true },
 		},
+		opts = {
+			scope = "git",
+		},
+		event = { "BufReadPost", "BufNewFile" },
+		cmd = "Grapple",
+		keys = {
+			{
+				"<leader>ma",
+				function()
+					require("grapple").toggle()
+					require("neo-tree.sources.manager").refresh("filesystem")
+				end,
+				desc = "Grapple toggle tag",
+			},
+			{ "<leader>M", "<cmd>Grapple toggle_tags<cr>", desc = "Grapple open tags window" },
+			{ map.CMD_period, "<cmd>Grapple cycle_tags next<cr>", desc = "Grapple cycle next tag" },
+			{ map.CMD_comma, "<cmd>Grapple cycle_tags prev<cr>", desc = "Grapple cycle previous tag" },
+			{ map.CMD_1, "<cmd>Grapple select index=1<cr>", desc = "Select first tag" },
+			{ map.CMD_2, "<cmd>Grapple select index=2<cr>", desc = "Select second tag" },
+			{ map.CMD_3, "<cmd>Grapple select index=3<cr>", desc = "Select third tag" },
+			{ map.CMD_4, "<cmd>Grapple select index=4<cr>", desc = "Select fourth tag" },
+			{ map.CMD_5, "<cmd>Grapple select index=5<cr>", desc = "Select fifth tag" },
+			{ map.CMD_6, "<cmd>Grapple select index=6<cr>", desc = "Select sixth tag" },
+			{ map.CMD_7, "<cmd>Grapple select index=7<cr>", desc = "Select seventh tag" },
+			{ map.CMD_8, "<cmd>Grapple select index=8<cr>", desc = "Select eighth tag" },
+			{ map.CMD_9, "<cmd>Grapple select index=9<cr>", desc = "Select ninth tag" },
+		},
 	},
 }
 
@@ -69,69 +98,6 @@ local airLinePlugins = {
 	},
 }
 
-local aiPlugins = {
-	{
-		"folke/sidekick.nvim",
-		opts = {
-			nes = {
-				enabled = false,
-			},
-			cli = {
-				mux = {
-					enabled = false,
-				},
-			},
-		},
-		keys = {
-			{
-				"<leader>aa",
-				function()
-					require("sidekick.cli").toggle({ name = "claude", focus = true })
-				end,
-				desc = "Sidekick Toggle CLI",
-			},
-			{
-				"<leader>ad",
-				function()
-					require("sidekick.cli").close()
-				end,
-				desc = "Detach a CLI Session",
-			},
-			{
-				"<leader>at",
-				function()
-					require("sidekick.cli").send({ msg = "{this}" })
-				end,
-				mode = { "x", "n" },
-				desc = "Send This",
-			},
-			{
-				"<leader>af",
-				function()
-					require("sidekick.cli").send({ msg = "{file}" })
-				end,
-				desc = "Send File",
-			},
-			{
-				"<leader>av",
-				function()
-					require("sidekick.cli").send({ msg = "{selection}" })
-				end,
-				mode = { "x" },
-				desc = "Send Visual Selection",
-			},
-			{
-				"<leader>ap",
-				function()
-					require("sidekick.cli").prompt()
-				end,
-				mode = { "n", "x" },
-				desc = "Sidekick Select Prompt",
-			},
-		},
-	},
-}
-
 local internalPlugins = tableUtils.spreadTables(
 	commonPlugins,
 	legendaryPlugins,
@@ -144,8 +110,7 @@ local internalPlugins = tableUtils.spreadTables(
 	neoTreePlugins,
 	gitPlugins,
 	motionPlugins,
-	searchPlugins,
-	aiPlugins
+	searchPlugins
 )
 
 local plugins = internalPlugins

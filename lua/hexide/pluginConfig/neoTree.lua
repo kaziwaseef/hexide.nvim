@@ -25,7 +25,7 @@ local M = {
 				close_if_last_window = true,
 				window = {
 					position = "left",
-					width = 30,
+					width = 40,
 				},
 				filesystem = {
 					use_libuv_file_watcher = true,
@@ -43,13 +43,31 @@ local M = {
 							["o"] = "system_open",
 							["y"] = "copy_relative_path",
 							["Y"] = "copy_absolute_path",
+							["g"] = "grapple_toggle",
 						},
 					},
-					components = {},
+					components = {
+						grapple_index = function(config, node, _)
+							local grapple = require("grapple")
+							local path = node:get_id()
+							local tags = grapple.tags()
+							for index, value in ipairs(tags) do
+								if value.path == path then
+									return {
+										text = string.format("⥤ %d", index),
+										highlight = config.highlight or "NeoTreeDirectoryIcon",
+									}
+								end
+							end
+
+							return {}
+						end,
+					},
 					renderers = {
 						file = {
 							{ "icon" },
 							{ "name", use_git_status_colors = true },
+							{ "grapple_index" },
 							{ "diagnostics" },
 							{ "git_status", highlight = "NeoTreeDimText" },
 						},
@@ -77,6 +95,14 @@ local M = {
 						local rel_path = vim.fn.fnamemodify(node:get_id(), ":.")
 						vim.fn.setreg("+", rel_path)
 						vim.notify("Copied: " .. rel_path)
+					end,
+					grapple_toggle = function(state)
+						local node = state.tree:get_node()
+						local path = node:get_id()
+						require("grapple").toggle({
+							path = path,
+						})
+						require("neo-tree.sources.manager").refresh("filesystem")
 					end,
 				},
 				default_component_configs = {
