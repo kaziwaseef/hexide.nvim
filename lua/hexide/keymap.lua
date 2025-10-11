@@ -23,8 +23,6 @@ nnoremap <expr> k v:count ? 'k' : 'gk'
 keymap("v", map.CMD_c, '"*y', opts)
 -- Keep cursor in the same place for yank
 keymap("v", "y", "ygv<Esc>", opts)
--- Copy from yank buffer to OS Clipboard
-keymap("n", "Y", "", opts)
 
 -- Select all
 keymap("n", map.CMD_a, "ggVG", opts)
@@ -59,3 +57,12 @@ keymap("v", "<", "<gv", opts)
 
 -- Close Quickfix Window
 keymap("n", "<leader>cc", "<cmd>cclose<cr>", opts)
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		local yanked = vim.fn.getreg('"')
+		local type = vim.fn.getregtype('"')
+		vim.fn.setreg("+", yanked, type)
+	end,
+	desc = "Copy yanked text to system clipboard (+)",
+})
