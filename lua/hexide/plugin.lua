@@ -5,7 +5,6 @@ local completionPlugins = require("hexide.pluginConfig.completion")
 local telescopePlugins = require("hexide.pluginConfig.telescope")
 local treesitterPlugins = require("hexide.pluginConfig.treesitter")
 local gitPlugins = require("hexide.pluginConfig.git")
--- local tabPlugins = require("hexide.pluginConfig.barbar")
 local neoTreePlugins = require("hexide.pluginConfig.neoTree")
 local lspConfigPlugins = require("hexide.pluginConfig.lspConfig")
 local legendaryPlugins = require("hexide.pluginConfig.legendaryPlugins")
@@ -39,6 +38,46 @@ local commonPlugins = {
 			require("scrollbar").setup()
 		end,
 	},
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			local harpoon = require("harpoon")
+
+			harpoon:setup()
+
+			local map = require("hexide.osKeyMap").mapping
+
+			vim.keymap.set("n", "<leader>a", function()
+				harpoon:list():add()
+			end)
+			vim.keymap.set("n", "<leader>au", function()
+				harpoon.ui:toggle_quick_menu(harpoon:list())
+			end)
+
+			vim.keymap.set("n", map.CMD_1, function()
+				harpoon:list():select(1)
+			end)
+			vim.keymap.set("n", map.CMD_2, function()
+				harpoon:list():select(2)
+			end)
+			vim.keymap.set("n", map.CMD_3, function()
+				harpoon:list():select(3)
+			end)
+			vim.keymap.set("n", map.CMD_4, function()
+				harpoon:list():select(4)
+			end)
+
+			-- Toggle previous & next buffers stored within Harpoon list
+			vim.keymap.set("n", map.CMD_comma, function()
+				harpoon:list():prev()
+			end)
+			vim.keymap.set("n", map.CMD_period, function()
+				harpoon:list():next()
+			end)
+		end,
+	},
 }
 
 local colorSchemes = {
@@ -64,33 +103,6 @@ local airLinePlugins = {
 	},
 }
 
-local aiPlugins = {
-	{
-		"coder/claudecode.nvim",
-		dependencies = { "folke/snacks.nvim" },
-		config = true,
-		keys = {
-			{ "<leader>a", nil, desc = "AI/Claude Code" },
-			{ "<leader>ac", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
-			{ "<leader>af", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
-			{ "<leader>ar", "<cmd>ClaudeCode --resume<cr>", desc = "Resume Claude" },
-			{ "<leader>aC", "<cmd>ClaudeCode --continue<cr>", desc = "Continue Claude" },
-			{ "<leader>am", "<cmd>ClaudeCodeSelectModel<cr>", desc = "Select Claude model" },
-			{ "<leader>ab", "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current buffer" },
-			{ "<leader>as", "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Send to Claude" },
-			{
-				"<leader>as",
-				"<cmd>ClaudeCodeTreeAdd<cr>",
-				desc = "Add file",
-				ft = { "NvimTree", "neo-tree", "oil", "minifiles", "netrw" },
-			},
-			-- Diff management
-			{ "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
-			{ "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
-		},
-	},
-}
-
 local internalPlugins = tableUtils.spreadTables(
 	commonPlugins,
 	legendaryPlugins,
@@ -104,8 +116,7 @@ local internalPlugins = tableUtils.spreadTables(
 	neoTreePlugins,
 	gitPlugins,
 	motionPlugins,
-	searchPlugins,
-	aiPlugins
+	searchPlugins
 )
 
 local plugins = internalPlugins
