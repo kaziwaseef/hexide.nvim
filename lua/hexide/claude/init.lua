@@ -26,4 +26,11 @@ vim.api.nvim_create_user_command("ClaudeSendFile", M.send_file, {
 	desc = "Send the file",
 })
 
+local opts = { noremap = true, silent = true }
+local keymap = vim.api.nvim_set_keymap
+
+keymap("n", "<leader>af", "<cmd>ClaudeSendFile<cr>", opts)
+keymap("n", "<leader>as", "<cmd>ClaudeSend<cr>", opts)
+keymap("v", "<leader>as", ":'<,'>ClaudeSend<cr>", opts)
+
 return M

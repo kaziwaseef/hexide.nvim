@@ -38,6 +38,12 @@ local commonPlugins = {
 			require("scrollbar").setup()
 		end,
 	},
+	{
+		"cbochs/grapple.nvim",
+		dependencies = {
+			{ "nvim-tree/nvim-web-devicons", lazy = true },
+		},
+	},
 }
 
 local colorSchemes = {
