@@ -2,8 +2,8 @@ local M = {}
 
 local send_to_claude = require("hexide.claude.send").send_to_claude
 
-M.send_file_claude = function()
-	local filepath = vim.api.nvim_buf_get_name(0)
+M.send_file_claude = function(filepath_override)
+	local filepath = type(filepath_override) == "string" and filepath_override or vim.api.nvim_buf_get_name(0)
 	if filepath == "" then
 		vim.notify("No file in current buffer", vim.log.levels.WARN)
 		return

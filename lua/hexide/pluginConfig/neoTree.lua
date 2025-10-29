@@ -44,6 +44,7 @@ local M = {
 							["y"] = "copy_relative_path",
 							["Y"] = "copy_absolute_path",
 							["g"] = "grapple_toggle",
+							["s"] = "send_file_to_claude_code",
 						},
 					},
 					components = {
@@ -103,6 +104,11 @@ local M = {
 							path = path,
 						})
 						require("neo-tree.sources.manager").refresh("filesystem")
+					end,
+					send_file_to_claude_code = function(state)
+						local node = state.tree:get_node()
+						local path = node:get_id()
+						require("hexide.claude").send_file(path)
 					end,
 				},
 				default_component_configs = {

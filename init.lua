@@ -7,4 +7,4 @@ require("hexide.lsp")
 require("hexide.claude")
 require("hexide.autocommands")
 
--- vim.lsp.set_log_level("debug")
+vim.keymap.del("n", "gri", {})

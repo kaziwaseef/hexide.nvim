@@ -19,6 +19,15 @@ local commonPlugins = {
 	"vim-scripts/ReplaceWithRegister",
 	"tpope/vim-commentary",
 	{
+		"axkirillov/hbac.nvim",
+		config = function()
+			require("hbac").setup({
+				autoclose = true,
+				threshold = 5,
+			})
+		end,
+	},
+	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		config = function()
 			require("nvim-treesitter.configs").setup({})
