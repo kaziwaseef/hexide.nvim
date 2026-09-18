@@ -261,4 +261,8 @@ run = 'move-node-to-workspace 9'
 
 [[on-window-detected]]
 if.app-id = 'com.openai.codex'
+run = 'move-node-to-workspace Z'
+
+[[on-window-detected]]
+if.app-id = 'com.stablyai.orca'
 run = 'move-node-to-workspace A'
