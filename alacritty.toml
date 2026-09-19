@@ -184,28 +184,6 @@ key = "Comma"
 mods = "Control|Shift"
 
 [[keyboard.bindings]]
-chars = """
-
-"""
-key = "J"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\u000B"
-key = "K"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\f"
-key = "L"
-mods = "Command"
-
-[[keyboard.bindings]]
-chars = "\b"
-key = "H"
-mods = "Command"
-
-[[keyboard.bindings]]
 chars = "√"
 key = "V"
 mods = "Command|Shift"
@@ -228,6 +206,36 @@ mods = "Control|Shift"
 [[keyboard.bindings]]
 chars = "\u0015"
 key = "U"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "µ"
+key = "G"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "µ"
+key = "G"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "←"
+key = "H"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "↓"
+key = "J"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "↑"
+key = "K"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "→"
+key = "L"
 mods = "Command"
 
 [[keyboard.bindings]]
@@ -283,5 +291,3 @@ program = "/bin/zsh"
 [window]
 decorations = "none"
 startup_mode = "Maximized"
-
-[keyboard]

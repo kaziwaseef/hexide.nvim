@@ -2,6 +2,8 @@
 
 This is a full ide experience. This is not a neovim plugin.
 
+> How the key bindings flow from Alacritty to Neovim is documented in [AGENTS.md](AGENTS.md) — read it before changing any binding.
+
 # Tmux Setup
 
 tmux is used as a multiplexer to run nvim and have persistent sessions

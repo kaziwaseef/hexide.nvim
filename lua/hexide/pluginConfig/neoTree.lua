@@ -11,6 +11,34 @@ local M = {
 				"<cmd>Neotree source=filesystem reveal=true<cr>",
 				desc = "Neo Tree File Browser",
 			},
+			{
+				map.CMD_g,
+				function()
+					local win
+					for _, w in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+						local b = vim.api.nvim_win_get_buf(w)
+						if vim.bo[b].filetype == "neo-tree" then
+							win = w
+							break
+						end
+					end
+
+					if not win then
+						vim.cmd("Neotree focus source=git_status reveal=true")
+						return
+					end
+
+					local showing_git = vim.fn.bufname(vim.api.nvim_win_get_buf(win)):find("git_status") ~= nil
+					local focused = vim.api.nvim_get_current_win() == win
+
+					if showing_git and focused then
+						vim.cmd("Neotree toggle source=git_status")
+					else
+						vim.cmd("Neotree focus source=git_status")
+					end
+				end,
+				desc = "Neo Tree Git Status",
+			},
 		},
 		branch = "v3.x",
 		dependencies = {

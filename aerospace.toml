@@ -79,8 +79,8 @@ outer.right =      0
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
 [mode.main.binding]
-cmd-h = [] # Disable "hide application"
-cmd-alt-h = [] # Disable "hide others"
+# cmd-h = [] # macOS hide-app is rebound per-app via System Settings; ⌘h is used by nvim pane movement
+# cmd-alt-h = []
 # All possible keys:
 # - Letters.        a, b, c, ..., z
 # - Numbers.        0, 1, 2, ..., 9
