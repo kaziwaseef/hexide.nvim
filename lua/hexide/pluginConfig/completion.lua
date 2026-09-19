@@ -5,7 +5,6 @@ local M = {
 		dependencies = {
 			"hrsh7th/cmp-buffer", -- buffer completions
 			"hrsh7th/cmp-path", -- path completions
-			"hrsh7th/cmp-cmdline", -- cmdline completions
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-nvim-lua",
 		},
@@ -65,7 +64,7 @@ local M = {
 					-- Accept currently selected item. If none selected, `select` first item.
 					-- Set `select` to `false` to only confirm explicitly selected items.
 					[map.CMD_i] = cmp.mapping.complete(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }),
+					["<CR>"] = cmp.mapping.confirm({ select = false }),
 					-- ["<Tab>"] = cmp.mapping(function(fallback)
 					-- 	fallback()
 					-- end, {

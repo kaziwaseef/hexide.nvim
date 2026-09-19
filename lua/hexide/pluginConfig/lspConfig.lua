@@ -1,7 +1,4 @@
 local M = {
-	-- "williamboman/mason.nvim",
-	-- "WhoIsSethDaniel/mason-tool-installer.nvim",
-	-- "williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
 	"akinsho/flutter-tools.nvim",
 	{
@@ -10,8 +7,7 @@ local M = {
 		config = function()
 			require("fidget").setup()
 		end,
-		tag = "legacy",
-		dependencies = { "neovim/nvim-lspconfig" },
+		tag = "v2.0.0",
 	},
 	{
 		"mhartington/formatter.nvim",
@@ -23,7 +19,8 @@ local M = {
 				desc = "Format",
 			},
 			{
-				"<leader>w",
+				-- Not <leader>w: CamelCaseMotion claims it
+				"<leader>W",
 				"<cmd>noautocmd w<cr>",
 				desc = "Save without Formatting",
 			},
@@ -76,35 +73,6 @@ local M = {
 			require("hexide.autocommands").create_autoformat_autocmd(autoFormatFiles)
 		end,
 	},
-	-- {
-	-- 	"jose-elias-alvarez/null-ls.nvim",
-	-- 	dependencies = { "davidmh/cspell.nvim" },
-	-- 	config = function()
-	-- 		local sources = {
-	-- 			-- require("cspell").diagnostics.with({
-	-- 			-- 	diagnostic_config = {
-	-- 			-- 		-- see :help vim.diagnostic.config()
-	-- 			-- 		underline = true,
-	-- 			-- 		virtual_text = false,
-	-- 			-- 		signs = false,
-	-- 			-- 		update_in_insert = false,
-	-- 			-- 		severity_sort = false,
-	-- 			-- 	},
-	-- 			-- }),
-	-- 			-- require("cspell").code_actions,
-	-- 			require("null-ls").builtins.formatting.stylua,
-	-- 			require("null-ls").builtins.formatting.prettier,
-	-- 			require("null-ls").builtins.formatting.goimports,
-	-- 			require("null-ls").builtins.diagnostics.golangci_lint,
-	-- 			require("null-ls").builtins.formatting.autopep8,
-	-- 			require("null-ls").builtins.diagnostics.mypy,
-	-- 		}
-	-- 		require("null-ls").setup({
-	-- 			debug = true,
-	-- 			sources = sources,
-	-- 		})
-	-- 	end,
-	-- },
 	{
 		"kosayoda/nvim-lightbulb",
 		event = "BufEnter",

@@ -4,7 +4,6 @@ local tableUtils = require("hexide.utils.table")
 local completionPlugins = require("hexide.pluginConfig.completion")
 local telescopePlugins = require("hexide.pluginConfig.telescope")
 local treesitterPlugins = require("hexide.pluginConfig.treesitter")
-local gitPlugins = require("hexide.pluginConfig.git")
 local neoTreePlugins = require("hexide.pluginConfig.neoTree")
 local lspConfigPlugins = require("hexide.pluginConfig.lspConfig")
 local legendaryPlugins = require("hexide.pluginConfig.legendaryPlugins")
@@ -14,7 +13,6 @@ local searchPlugins = require("hexide.pluginConfig.search")
 local map = require("hexide.osKeyMap").mapping
 
 local commonPlugins = {
-	"nvim-lua/popup.nvim",
 	"nvim-lua/plenary.nvim",
 	"vim-scripts/ReplaceWithRegister",
 	"tpope/vim-commentary",
@@ -136,7 +134,6 @@ local internalPlugins = tableUtils.spreadTables(
 	telescopePlugins,
 	completionPlugins,
 	neoTreePlugins,
-	gitPlugins,
 	motionPlugins,
 	searchPlugins
 )

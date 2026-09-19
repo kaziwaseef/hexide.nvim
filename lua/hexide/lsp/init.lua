@@ -1,14 +1,4 @@
 vim.env.PATH = vim.env.HOME .. "/.asdf/shims:" .. vim.env.PATH
--- require("mason").setup({
--- 	ui = {
--- 		icons = {
--- 			package_installed = "✓",
--- 			package_pending = "➜",
--- 			package_uninstalled = "✗",
--- 		},
--- 		border = "rounded",
--- 	},
--- })
 
 local lspServers = {
 	"bashls", -- Bash
@@ -26,29 +16,6 @@ local lspServers = {
 	"astro",
 	"terraformls",
 }
-
-local formattingServers = {
-	"prettier",
-	"stylua",
-	"goimports",
-}
-local diagonosticServer = {
-	"golangci-lint", -- needed for golangci_lint_ls
-}
-local tableUtils = require("hexide.utils.table")
-
-local nonLspServers = tableUtils.spreadTables(formattingServers, diagonosticServer)
-
--- require("mason-tool-installer").setup({
--- 	ensure_installed = nonLspServers,
--- 	auto_update = true,
--- 	run_on_start = true,
--- })
-
--- require("mason-lspconfig").setup({
--- 	ensure_installed = lspServers,
--- 	automatic_installation = true,
--- })
 
 for _, server in pairs(lspServers) do
 	local opts = {

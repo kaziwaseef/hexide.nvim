@@ -46,6 +46,27 @@ local keymaps = {
 
 	-- Close Quickfix Window
 	{ "<leader>cc", "<cmd>cclose<cr>", description = "Close quickfix window", opts = { silent = true } },
+
+	-- LSP buffer keymaps (implemented in lsp/handlers.lua; listed here for the palette only).
+	-- All descriptions start with "LSP:" so searching "LSP" surfaces the full set.
+	{ "gD", description = "LSP: Go to declaration" },
+	{ "gd", description = "LSP: Go to definition" },
+	{ "K", description = "LSP: Hover documentation" },
+	{ "gi", description = "LSP: Go to implementation" },
+	{ "<leader>rn", description = "LSP: Rename symbol" },
+	{ "<leader>ca", description = "LSP: Code action" },
+	{ "[d", description = "LSP: Previous diagnostic" },
+	{ "]d", description = "LSP: Next diagnostic" },
+	{ "gl", description = "LSP: Show diagnostic in float" },
+
+	-- CamelCaseMotion (implemented by the plugin; display-only here).
+	-- Descriptions start with "Motion:" for palette search; all work in n/v/o modes.
+	{ "<leader>w", description = "Motion: CamelCase forward (next subword start)" },
+	{ "<leader>b", description = "Motion: CamelCase backward (prev subword start)" },
+	{ "<leader>e", description = "Motion: CamelCase end of subword" },
+	{ "<leader>iw", description = "Motion: CamelCase inner object (w)" },
+	{ "<leader>ib", description = "Motion: CamelCase inner object (b)" },
+	{ "<leader>ie", description = "Motion: CamelCase inner object (e)" },
 }
 
 local M = {
@@ -53,7 +74,6 @@ local M = {
 		"mrjones2014/legendary.nvim",
 		priority = 10000,
 		lazy = false,
-		dependencies = { "kkharji/sqlite.lua" },
 		keys = { { map.CMD_SHIFT_T, "<cmd>Legendary<cr>", desc = "Open Command Palette" } },
 		config = function()
 			require("legendary").setup({

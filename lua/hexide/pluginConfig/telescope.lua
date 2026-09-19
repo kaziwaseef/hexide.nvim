@@ -15,7 +15,7 @@ local M = {
 			{
 				map.CMD_SHIFT_P,
 				"<cmd>lua require'telescope.builtin'.git_files(require('telescope.themes').get_dropdown({ previewer = false, find_command = rg }))<cr>",
-				desc = "Open File (With Hidden)",
+				desc = "Git Files",
 			},
 			{
 				"<leader>B",
@@ -30,12 +30,12 @@ local M = {
 			{
 				"<leader>ae",
 				"<cmd>lua require'telescope.builtin'.diagnostics()<cr>",
-				desc = "Open Diagonostics",
+				desc = "Open Diagnostics",
 			},
 			{
 				"<leader>gr",
 				"<cmd>Telescope lsp_references<cr>",
-				desc = "Open Diagonostics",
+				desc = "Open References",
 			},
 		},
 		config = function()
