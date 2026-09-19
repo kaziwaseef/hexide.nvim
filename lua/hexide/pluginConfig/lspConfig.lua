@@ -25,7 +25,7 @@ local M = {
 			{
 				"<leader>w",
 				"<cmd>noautocmd w<cr>",
-				desc = "Format",
+				desc = "Save without Formatting",
 			},
 		},
 		config = function()

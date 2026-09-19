@@ -86,6 +86,21 @@ ln -s $(pwd)/lazygit.config.yml ${HOME}/Library/Application\ Support/lazygit/con
 Open neovim to get plugins. Or run :Lazy command
 ```
 
+## Dart / Flutter
+
+Dart LSP is enabled automatically. To get the full flutter-tools experience
+(device picker, hot reload, widget guides, `<leader>f*` keymaps), opt in
+per-project with an exrc file — the config runs with `set exrc`, so Neovim
+executes a local `.nvimrc` in the project root at startup:
+
+```lua
+-- <project-root>/.nvimrc
+vim.g.use_flutter_tools = true
+```
+
+Without it, plain `dartls` is used. Remember to trust/allow the exrc file
+when Neovim asks.
+
 # Aerospace setup
 
 ```bash

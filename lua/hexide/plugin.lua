@@ -39,10 +39,26 @@ local commonPlugins = {
 	{
 		"iamcco/markdown-preview.nvim",
 		keys = {
-			{ "<leader>md", "<cmd>MarkdownPreview<cr>", desc = "Markdown Preview" },
+			{
+				-- Not the :MarkdownPreview command — that is buffer-local and only
+				-- defined for already-loaded markdown buffers, which fails when the
+				-- plugin lazy-loads on this keypress (E492)
+				"<leader>md",
+				function()
+					vim.fn["mkdp#util#open_preview_page"]()
+				end,
+				desc = "Markdown Preview",
+			},
 		},
 		build = function()
-			vim.fn["mkdp#util#install"]()
+			-- Do NOT use mkdp#util#install(): it downloads prebuilt binaries that
+			-- are unsigned and fail to spawn from nvim on Apple Silicon
+			-- (E903: Unknown system error -88). Install the node deps instead so
+			-- the plugin falls back to `node app/index.js`.
+			vim.system(
+				{ "npx", "--yes", "yarn", "install", "--frozen-lockfile" },
+				{ cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy", "markdown-preview.nvim", "app") }
+			):wait()
 		end,
 	},
 	{
