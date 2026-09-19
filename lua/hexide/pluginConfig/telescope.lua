@@ -18,6 +18,11 @@ local M = {
 				desc = "Open File (With Hidden)",
 			},
 			{
+				"<leader>B",
+				"<cmd>Telescope buffers<cr>",
+				desc = "Open Buffers",
+			},
+			{
 				"<leader>gs",
 				"<cmd>Telescope lsp_document_symbols<cr>",
 				desc = "Open Buffer Symbols",
