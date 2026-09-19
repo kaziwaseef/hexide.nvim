@@ -15,13 +15,6 @@ local M = {
 				return
 			end
 
-			local snip_status_ok, luasnip = pcall(require, "luasnip")
-			if not snip_status_ok then
-				return
-			end
-
-			require("luasnip/loaders/from_vscode").lazy_load()
-
 			--   פּ ﯟ   some other good icons
 			local kind_icons = {
 				Text = "",
@@ -55,7 +48,7 @@ local M = {
 			cmp.setup({
 				snippet = {
 					expand = function(args)
-						luasnip.lsp_expand(args.body) -- For `luasnip` users.
+						vim.snippet.expand(args.body)
 					end,
 				},
 				mapping = {
@@ -92,7 +85,6 @@ local M = {
 							buffer = "[Buffer]",
 							nvim_lsp = "[LSP]",
 							nvim_lua = "[NVIM_LUA]",
-							luasnip = "[Snippet]",
 						})[entry.source.name]
 						return vim_item
 					end,
@@ -106,7 +98,6 @@ local M = {
 						end,
 					},
 					{ name = "nvim_lua" },
-					{ name = "luasnip" },
 					{ name = "buffer" },
 				},
 				confirm_opts = {

@@ -4,7 +4,7 @@ key = "B"
 mods = "Command"
 
 [[keyboard.bindings]]
-chars = "\t"
+chars = "ı"
 key = "I"
 mods = "Command"
 
