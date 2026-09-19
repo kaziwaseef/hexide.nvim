@@ -47,6 +47,13 @@ local commonPlugins = {
 				end,
 				desc = "Markdown Preview",
 			},
+			{
+				"<leader>ms",
+				function()
+					vim.fn["mkdp#util#stop_preview"]()
+				end,
+				desc = "Markdown Preview Stop",
+			},
 		},
 		build = function()
 			-- Do NOT use mkdp#util#install(): it downloads prebuilt binaries that
@@ -119,7 +126,7 @@ local airLinePlugins = {
 	{
 		"vim-airline/vim-airline",
 		dependencies = {
-			"kyazdani42/nvim-web-devicons",
+			"nvim-tree/nvim-web-devicons",
 		},
 	},
 }

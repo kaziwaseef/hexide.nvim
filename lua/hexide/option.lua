@@ -44,10 +44,4 @@ vim.cmd("filetype indent off")
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd("au TextYankPost * silent! lua vim.highlight.on_yank()")
-vim.api.nvim_exec(
-	[[
-        let $GIT_EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
-    ]],
-	false
-)
 vim.cmd([[set exrc]]) -- Load local settings
