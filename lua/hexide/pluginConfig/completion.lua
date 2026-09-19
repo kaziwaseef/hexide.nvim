@@ -71,7 +71,7 @@ local M = {
 					-- },
 					-- Accept currently selected item. If none selected, `select` first item.
 					-- Set `select` to `false` to only confirm explicitly selected items.
-					[map.CMD_u] = cmp.mapping.complete(),
+					[map.CMD_i] = cmp.mapping.complete(),
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 					-- ["<Tab>"] = cmp.mapping(function(fallback)
 					-- 	fallback()

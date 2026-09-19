@@ -239,6 +239,26 @@ key = "L"
 mods = "Command"
 
 [[keyboard.bindings]]
+chars = "⇠"
+key = "H"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "⇣"
+key = "J"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "⇡"
+key = "K"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "⇢"
+key = "L"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
 chars = "\u0004"
 key = "D"
 mods = "Command"

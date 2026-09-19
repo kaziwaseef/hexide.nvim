@@ -57,9 +57,8 @@ local M = {
 						i = {
 							["<C-n>"] = actions.cycle_history_next,
 							["<C-p>"] = actions.cycle_history_prev,
-
-							["<C-j>"] = actions.move_selection_next,
-							["<C-k>"] = actions.move_selection_previous,
+							[map.CMD_j] = actions.move_selection_next,
+							[map.CMD_k] = actions.move_selection_previous,
 
 							["<C-c>"] = actions.close,
 
