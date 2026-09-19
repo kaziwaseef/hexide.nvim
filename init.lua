@@ -4,7 +4,6 @@ require("hexide.keymap")
 require("hexide.plugin")
 require("hexide.colorscheme")
 require("hexide.lsp")
-require("hexide.claude")
 require("hexide.autocommands")
 
 vim.keymap.del("n", "gri", {})
