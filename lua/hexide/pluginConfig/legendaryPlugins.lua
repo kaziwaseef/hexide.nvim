@@ -78,6 +78,10 @@ local M = {
 		config = function()
 			require("legendary").setup({
 				keymaps = keymaps,
+				commands = {
+					{ ":HexideLspInstall", description = "LSP: Install missing servers" },
+					{ ":HexideLspStatus", description = "LSP: Show server install status" },
+				},
 				extensions = {
 					lazy_nvim = true,
 				},

@@ -87,6 +87,14 @@ ln -s $(pwd)/lazygit.config.yml ${HOME}/Library/Application\ Support/lazygit/con
 Open neovim to get plugins. Or run :Lazy command
 ```
 
+## LSP servers
+
+Servers whose binary is missing (or is an asdf shim with no installed version)
+are skipped at startup, with a single warning. `:HexideLspInstall [server]`
+installs them (npm / go / brew, then `asdf reshim`) and enables them without a
+restart; `:HexideLspStatus` lists what is installed. Recipes live in
+`lua/hexide/lsp/installers.lua`.
+
 ## Dart / Flutter
 
 Dart LSP is enabled automatically. To get the full flutter-tools experience
